@@ -1,23 +1,16 @@
 {
-  "name": "ARK",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "node node_modules/jest/bin/jest.js"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
+  "name": "pw01",
+  "version": "0.0.0",
+  "description": "Hello Expo!",
+  "author": null,
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "@expo/ex-navigation": "~3.0.0",
-    "@expo/samples": "~1.0.3",
-    "expo": "17.0.0",
-    "react": "16.0.0-alpha.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz"
-  },
-  "devDependencies": {
-    "jest-expo": "~1.0.1"
+    "axios": "^0.16.1",
+    "react-native-elements": "^0.11.0",
+    "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7",
+    "expo": "^18.0.4",
+    "react": "16.0.0-alpha.12",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-18.0.1.tar.gz"
   }
 }

@@ -1,6 +1,5 @@
 {
-  "presets": ["babel-preset-expo","react-native"],
-  "sourceMaps": true,
+  "presets": ["babel-preset-expo"],
   "env": {
     "development": {
       "plugins": ["transform-react-jsx-source"]
