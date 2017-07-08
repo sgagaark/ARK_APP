@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, View  } from 'react-native';
+import { ScrollView, Text, View , AppRegistry } from 'react-native';
 import {LoginRouter} from './Router';
 import { TabRouter } from './Router';
 // import { DrawerRouter } from './Router';
@@ -11,3 +11,5 @@ const App = () => (
    );
 
 export default App;
+
+AppRegistry.registerComponent('ARK_APP',() => App);

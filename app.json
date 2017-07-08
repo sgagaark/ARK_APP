@@ -2,7 +2,7 @@
   "expo": {
     "name": "ARK_APP",
     "description": "An empty new project",
-    "slug": "ARK_APP",
+    "slug": "ark",
     "privacy": "public",
     "sdkVersion": "18.0.0",
     "version": "1.0.0",
