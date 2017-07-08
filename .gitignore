@@ -2,4 +2,7 @@ node_modules/**/*
 .expo/*
 npm-debug.*
 
-ios/build/
+ios/
+android/
+__tests__/
+
