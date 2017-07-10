@@ -61,7 +61,7 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label: 'Receive',
-          icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
+          //icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
         },
       },
     },
@@ -70,7 +70,7 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label:'Send',
-          icon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+          //icon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
         },
       },
     },
@@ -79,7 +79,7 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label: 'History',
-          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          //icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
         },
       },
     },
@@ -88,7 +88,7 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label: 'Logout',
-          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          //icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
         },
       },
     },    
