@@ -1,14 +1,17 @@
-import React from 'react';
-import { AppRegistry,ScrollView, Text, View  } from 'react-native';
-import {LoginRouter} from './Router';
+import React, { Component } from 'react';
+import { AppRegistry, ScrollView, Text, View } from 'react-native';
+import { LoginRouter } from './Router';
 import { TabRouter } from './Router';
 // import { DrawerRouter } from './Router';
 
 
-const App = () => (
-  
-      <LoginRouter />
-   );
+class App extends Component {
+      render() {
+            return (
+                  <LoginRouter />
+            )
+      }
+}
 
 export default App;
 

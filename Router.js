@@ -18,7 +18,7 @@ export const LoginRouter = StackNavigator({
   Login: {
     screen: Login,
     navigationOptions: {
-      title: 'Login',
+      title: '登入',
     },
   },
   Forgot: {
