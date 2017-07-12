@@ -18,7 +18,7 @@ onSelect(index, value){
 
   render() {
     const {bgcolor,container,header,headertext,headerbutL,headerbutR,sendtitlestyle,titleinput,sendcontstyle,selectboat,
-      RadioGroupstyle,RadioButtonstyle,Radiotext,Radiotextstyle} = styles;
+      RadioGroupstyle,RadioButtonstyle,Radiotext,Radiotextstyle,imgoutstyle} = styles;
     return (
       <View style={bgcolor}>
         {/*上方藍色tab*/}
@@ -48,7 +48,7 @@ onSelect(index, value){
         {/*主題輸入與選船*/}
         <View style={container}>
           <View style={sendtitlestyle}> 
-            <View>
+            <View style={imgoutstyle}>
               {/*這艘要依照下面RadioGroup所選擇的顏色更換圖片....這就之後再說吧*/}
               <Image source={require('../../assets/send/bboat.png')}/>
             </View>
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'row',
-    height:60,
+    height:64,
     paddingTop:15,
   },
   headertext:{
@@ -187,6 +187,23 @@ const styles = StyleSheet.create({
     Radiotextstyle:{
       color:'#9f9f9f',
       fontSize: 12,
+    },
+    imgoutstyle:{
+      marginRight:15,
+      alignItems:'center',
+      justifyContent:'center',
+      width: 60,
+      height:60,
+      borderStyle:'solid',
+      borderRadius:32,
+      paddingBottom:2,
+      shadowColor: '#dddddd',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowRadius: 3,
+      shadowOpacity: 1
     }
 })
 
