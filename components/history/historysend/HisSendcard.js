@@ -9,9 +9,13 @@ class HisSendcard extends Component {
 
 
   render() {
-    const {bgcolor,titletext,context,timetext,imgstyle,contstyle,redpoint} = styles;
+    const {bgcolor,titletext,context,timetext,imgstyle,contstyle,redpoint,redpointstyle} = styles;
     return (
-      <View style={bgcolor}>               
+      <View style={bgcolor}>
+        <View style={redpointstyle}>
+          {/*有新的回覆才出現*/}
+          <View style={redpoint}></View>        
+        </View>                       
         <View style={imgstyle}>
           <Image source={require('../../../assets/send/bboat.png')}/>
         </View>
@@ -30,7 +34,8 @@ class HisSendcard extends Component {
           </View>
         </View>
         <View>
-          <Image source={require('../../../assets/iconReply.png')}/>
+          {/*有被回復過才出現*/}
+          <Image source={require('../../../assets/iconMessage.png')}/>
         </View>
       </View>       
     );
@@ -80,12 +85,15 @@ const styles = StyleSheet.create({
     marginBottom:19,
   },
   redpoint:{
-    width: 28,
-    height:28,
+    width: 10,
+    height:10,
     backgroundColor:'#e4007f',
     borderColor:'#e4007f',
     borderStyle:'solid',
-    borderRadius:15, 
+    borderRadius:5.4, 
+  },
+  redpointstyle:{
+    marginRight:10,
   }
 })
 export default HisSendcard;

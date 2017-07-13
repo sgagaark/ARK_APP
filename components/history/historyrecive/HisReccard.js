@@ -9,9 +9,11 @@ class HisReccard extends Component {
 
 
   render() {
-    const {bgcolor,titletext,context,timetext,imgstyle,contstyle,redpoint} = styles;
+    const {bgcolor,titletext,context,timetext,imgstyle,contstyle,redpoint,redpointstyle} = styles;
     return (
-      <View style={bgcolor}>               
+      <View style={bgcolor}>
+        <View style={redpointstyle}>    
+        </View>               
         <View style={imgstyle}>
           <Image source={require('../../../assets/send/bboat.png')}/>
         </View>
@@ -30,6 +32,7 @@ class HisReccard extends Component {
           </View>
         </View>
         <View>
+          {/*回復過的才出現*/}
           <Image source={require('../../../assets/iconReply.png')}/>
         </View>
       </View>       
@@ -86,6 +89,10 @@ const styles = StyleSheet.create({
     borderColor:'#e4007f',
     borderStyle:'solid',
     borderRadius:15, 
+  },
+    redpointstyle:{
+    marginRight:10,
+    width:10,
   }
 })
 export default HisReccard;

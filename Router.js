@@ -62,12 +62,12 @@ export const LoginRouter = StackNavigator({
 
 // 這裡需要看你怎麼做(這裡是receive點船進入的畫面切換StackNavigator)
 export const ReceiveStackRouter = StackNavigator({
-  // 主頁面可以切換送或收
+  // 很多船的畫面
   Receive: {
     screen: Receive,
     navigationOptions: {
-      title: 'Receive',
-      header: {
+      title: '今天收到的船',
+      header:{
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
@@ -157,6 +157,7 @@ export const HistoryScreenStackRouter = StackNavigator({
 //最後app.js抓的
 export const TabRouter = TabNavigator(
   {
+    
     ReceiveStackRouter: {
       screen: ReceiveStackRouter,
       navigationOptions: {
@@ -236,7 +237,7 @@ export const MainRouter = StackNavigator({
 
 const styles = StyleSheet.create({
   icon: {
-    width: 26,
-    height: 26,
+    width: 40,
+    height: 33,
   },
 });
