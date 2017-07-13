@@ -1,5 +1,6 @@
 import React from 'react';
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { ScrollView,StyleSheet,View,Text,Image } from 'react-native';
+import { TabNavigator, StackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Login from './components/login/Login';
@@ -12,7 +13,10 @@ import Signup3 from './components/login/signup3';
 import Logout from './components/logout/logout';
 import Receive from './components/receive/receive';
 import Send from './components/send/send';
-import History from './components/history/history';
+import HistoryScreen from './components/history/HistoryScreen';
+
+import HisRecmore from './components/history/historyrecive/hisrecdmore/HisRecmore';
+import HisSendmoreseceen from './components/history/historysend/hissendmore/HisSendmoreseceen';
 
 export const LoginRouter = StackNavigator({
   Login: {
@@ -53,16 +57,117 @@ export const LoginRouter = StackNavigator({
   },
 });
 
+// 這裡需要看你怎麼做(這裡是receive點船進入的畫面切換StackNavigator)
+export const ReceiveStackRouter = StackNavigator({
+  // 主頁面可以切換送或收
+  Receive: {
+    screen: Receive,
+    navigationOptions: {
+      title: 'Receive',
+      header:{
+        titleStyle: {
+          fontSize: 17,
+          color: '#ffffff'
+        },
+        style: {
+          backgroundColor: '#68accb'
+        },        
+      },
+    },
+  },
+  // 點船進入的畫面
+  // 位置D:\app\ARK_APP\components\history\historyrecive\hisrecdmore\HisRecmore.js
+  HisRecmore: {
+    screen: HisRecmore,
+    navigationOptions: {
+      title: '收到的船',
+      header:{
+        titleStyle: {
+          fontSize: 17,
+          color: '#ffffff'
+        },
+        style: {
+          backgroundColor: '#68accb'
+        },        
+      },
+    },
+  },
+});
 
+
+// 這裡需要看你怎麼做(這裡是history裡面的StackNavigator)
+export const HistoryScreenStackRouter = StackNavigator({
+  // 主頁面可以切換送或收
+  // 位置D:\app\ARK_APP\components\history\HistoryScreen.js
+  HistoryScreen: {
+    screen: HistoryScreen,
+    navigationOptions: {
+      title: '紙船紀錄',
+      header:{
+        titleStyle: {
+          fontSize: 17,
+          color: '#ffffff'
+        },
+        style: {
+          backgroundColor: '#68accb'
+        },        
+      },
+    },
+  },
+  // 點收船的卡可以進入到更多
+  // 位置D:\app\ARK_APP\components\history\historyrecive\hisrecdmore\HisRecmore.js
+  HisRecmore: {
+    screen: HisRecmore,
+    navigationOptions: {
+      title: '收到的船',
+      header:{
+        titleStyle: {
+          fontSize: 17,
+          color: '#ffffff'
+        },
+        style: {
+          backgroundColor: '#68accb'
+        },        
+      },
+    },
+  },
+  // 店送船的卡可以進入到更多裡的兩個切換頁
+  // 位置D:\app\ARK_APP\components\history\historysend\hissendmore\HisSendmoreseceen.js
+  HisSendmoreseceen: {
+    screen: HisSendmoreseceen,
+    navigationOptions: {
+      title: '送出的訊息',
+      header:{
+        titleStyle: {
+          fontSize: 17,
+          color: '#ffffff'
+        },
+        style: {
+          backgroundColor: '#68accb'
+        },        
+      },
+    },
+  },
+});
+
+
+//最後app.js抓的
 export const TabRouter = TabNavigator(
   {
-    Receive: {
-      screen: Receive,
+    ReceiveStackRouter: {
+      screen: ReceiveStackRouter,
       navigationOptions: {
-        tabBar: {
-          label: 'Receive',
-          //icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
-        },
+        // tabBar: {
+        //   label: 'Receive',
+        //   icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
+        // },
+        tabBarLabel: 'Receive',
+        tabBarIcon: ({ tintColor }) => (
+        <Image
+          source={require('./assets/tabicons/default/btnReceive.png')}
+          style={[styles.icon, {tintColor: tintColor}]}
+        />
+        ),
       },
     },
     Send: {
@@ -74,12 +179,13 @@ export const TabRouter = TabNavigator(
         },
       },
     },
-    History: {
-      screen: History,
+    // 這裡是抓history的StackNavigator
+    HistoryScreenStackRouter: {
+      screen: HistoryScreenStackRouter,
       navigationOptions: {
         tabBar: {
-          label: 'History',
-          //icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          label: 'HistoryScreen',
+          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
         },
       },
     },
@@ -97,3 +203,9 @@ export const TabRouter = TabNavigator(
     animationEnabled: 'true',
   }
 );
+const styles = StyleSheet.create({
+  icon: {
+    width: 26,
+    height: 26,
+  },
+});
