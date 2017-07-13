@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button, Image, Linking } from 'react-native';
 import { List, ListItem, FormInput } from 'react-native-elements';
+import axios from 'axios';
 
 // Make a component
 class Signup extends Component {
@@ -61,15 +62,17 @@ class Signup extends Component {
               clearTextOnFocus={true}
               placeholder='請輸入密碼'
               keyboardType='default'
-              onChangeText={(passwd) => {
-                this.setState({ passwd });
+              onChangeText={(repasswd) => {
+                this.setState({ repasswd });
               }}
             />
           </View>
         </View>
         <View style={butlogin}>
           <Button
-            onPress={() => RegisterAccount(this.state)}
+            onPress={() => {
+              this.RegisterAccount();
+            }}
             title="下一步"
             color="#ffffff"
             style={{ fontSize: 18 }}
@@ -78,30 +81,37 @@ class Signup extends Component {
       </View>
     );
   }
+
+  //註冊帳號 
+  RegisterAccount() {
+    if (this.state.passwd != this.state.repasswd) {
+      //密碼不一致
+      alert("密碼不一致");
+      return;
+    } else {
+      axios('/RegisterAccount', {
+        method: 'post',
+        baseURL: 'http://www.rongserver.com/ark/api/',
+        data: {
+          email: this.state.email,
+          passwd: this.state.passwd
+        }
+      })
+        .then((response) => {
+          if (response.data['status']) {
+            alert("註冊成功");
+            this.props.navigation.navigate('Signup2');
+          } else {
+            this.props.navigation.navigate('Signup2');
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
+    }
+  }
+
 }
 
-function RegisterAccount(state) {
-  if(state.passwd!=state.repasswd){
-    //密碼不一致
-    return;
-  }
-  axios('/RegisterAccount', {
-    method: 'post',
-    baseURL: 'http://www.rongserver.com/ark/api/',
-    data: {
-      email: state.email,
-      passwd: state.passwd
-    }
-  })
-    .then((response) => {
-      if (response.data['status']) {
-        console.log('註冊成功');
-        navigate('Signup2');
-      } else {
-        console.log('帳號重複');
-      }
-    })
-}
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView,StyleSheet,View,Text,Image } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
 import { TabNavigator, StackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -31,31 +31,34 @@ export const LoginRouter = StackNavigator({
       title: '忘記密碼',
     },
   },
-    Forgot2: {
+  Forgot2: {
     screen: Forgot2,
     navigationOptions: {
       title: '寄送完成',
     },
   },
-   Signup: {
+  Signup: {
     screen: Signup,
     navigationOptions: {
       title: '註冊',
     },
   },
-    Signup2: {
+  Signup2: {
     screen: Signup2,
     navigationOptions: {
       title: '電子信箱認證',
     },
   },
-    Signup3: {
+  Signup3: {
     screen: Signup3,
     navigationOptions: {
       title: '註冊完成',
     },
-  },
-});
+  }
+}, {
+    headerMode: 'none',
+  }
+);
 
 // 這裡需要看你怎麼做(這裡是receive點船進入的畫面切換StackNavigator)
 export const ReceiveStackRouter = StackNavigator({
@@ -64,14 +67,14 @@ export const ReceiveStackRouter = StackNavigator({
     screen: Receive,
     navigationOptions: {
       title: 'Receive',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
           backgroundColor: '#68accb'
-        },        
+        },
       },
     },
   },
@@ -81,14 +84,14 @@ export const ReceiveStackRouter = StackNavigator({
     screen: HisRecmore,
     navigationOptions: {
       title: '收到的船',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
           backgroundColor: '#68accb'
-        },        
+        },
       },
     },
   },
@@ -103,14 +106,14 @@ export const HistoryScreenStackRouter = StackNavigator({
     screen: HistoryScreen,
     navigationOptions: {
       title: '紙船紀錄',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
           backgroundColor: '#68accb'
-        },        
+        },
       },
     },
   },
@@ -120,14 +123,14 @@ export const HistoryScreenStackRouter = StackNavigator({
     screen: HisRecmore,
     navigationOptions: {
       title: '收到的船',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
           backgroundColor: '#68accb'
-        },        
+        },
       },
     },
   },
@@ -137,14 +140,14 @@ export const HistoryScreenStackRouter = StackNavigator({
     screen: HisSendmoreseceen,
     navigationOptions: {
       title: '送出的訊息',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
           backgroundColor: '#68accb'
-        },        
+        },
       },
     },
   },
@@ -157,25 +160,27 @@ export const TabRouter = TabNavigator(
     ReceiveStackRouter: {
       screen: ReceiveStackRouter,
       navigationOptions: {
-        // tabBar: {
-        //   label: 'Receive',
-        //   icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
-        // },
-        tabBarLabel: 'Receive',
-        tabBarIcon: ({ tintColor }) => (
-        <Image
-          source={require('./assets/tabicons/default/btnReceive.png')}
-          style={[styles.icon, {tintColor: tintColor}]}
-        />
-        ),
+        tabBar: {
+          label: 'Receive',
+          icon: ({ tintColor }) =>
+            <Image
+              source={require('./assets/tabicons/default/btnReceive.png')}
+              style={[styles.icon, { tintColor: tintColor }]}
+            />
+        },
       },
     },
-    Send: {
+
+    SendTab: {
       screen: Send,
       navigationOptions: {
         tabBar: {
-          label:'Send',
-          //icon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+          label: 'Send',
+          icon: ({ tintColor }) =>
+            <Image
+              source={require('./assets/tabicons/default/btnSend.png')}
+              style={[styles.icon, { tintColor: tintColor }]}
+            />
         },
       },
     },
@@ -184,25 +189,51 @@ export const TabRouter = TabNavigator(
       screen: HistoryScreenStackRouter,
       navigationOptions: {
         tabBar: {
-          label: 'HistoryScreen',
-          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          label: 'History',
+          icon: ({ tintColor }) =>
+            <Image
+              source={require('./assets/tabicons/default/btnClock.png')}
+              style={[styles.icon, { tintColor: tintColor }]}
+            />
         },
       },
     },
-    Logout: {
+    LogoutTab: {
       screen: Logout,
       navigationOptions: {
         tabBar: {
           label: 'Logout',
-          //icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          icon: ({ tintColor }) =>
+            <Image
+              source={require('./assets/tabicons/default/faSignOutGrBig.png')}
+              style={[styles.icon, { tintColor: tintColor }]}
+            />
         },
       },
-    },    
+    },
   },
   {
     animationEnabled: 'true',
+    tabBarOptions: {
+      showLabel: false,
+      activeTintColor: '#42758c',
+    }
   }
 );
+
+export const MainRouter = StackNavigator({
+  MainScreen: {
+    screen: LoginRouter,
+  },
+  ContentScreen: {
+    screen: TabRouter,
+  }
+},
+  {
+    headerMode: 'none',
+  }
+)
+
 const styles = StyleSheet.create({
   icon: {
     width: 26,

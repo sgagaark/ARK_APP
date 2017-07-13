@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView,StyleSheet,View,Text,Image } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-import SvgUri from 'react-native-svg-uri';
+//import SvgUri from 'react-native-svg-uri';
 import Receiveboat from './receiveboat';
 // Make a component
 class Receive extends Component {

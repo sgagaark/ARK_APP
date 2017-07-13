@@ -48,7 +48,7 @@ class Login extends Component {
         <View style={butlogin}>
           <Button
             //登入會員的按鈕
-            onPress={() => UserLogin(this.state)}
+            onPress={() => this.UserLogin(this.state)}
             title="登入"
             color="#ffffff"
             style={{ fontSize: 18 }}
@@ -75,27 +75,28 @@ class Login extends Component {
       </View>
     );
   }
-}
+  UserLogin() {
+    axios('/UserLogin', {
+      method: 'post',
+      baseURL: 'http://www.rongserver.com/ark/api/',
+      data: {
+        email: this.state.email,
+        passwd: this.state.passwd
 
-function UserLogin(state) {
-  axios('/UserLogin', {
-    method: 'post',
-    baseURL: 'http://www.rongserver.com/ark/api/',
-    data: {
-      email: state.email,
-      passwd: state.passwd
-
-    }
-  })
-    .then((response) => {
-      if (response.data['status']) {
-        console.log('isLogin');
-      } else {
-        console.log('LoginFail');
       }
-    }).catch((err) => {
-      console.log(err);
     })
+      .then((response) => {
+        if (response.data['status']) {
+          console.log('isLogin');
+        } else {
+          console.log('LoginFail');
+        }
+        this.props.navigation.navigate('ContentScreen');
+      }).catch((err) => {
+        console.log(err);
+      })
+  }
+
 }
 
 const styles = StyleSheet.create({
