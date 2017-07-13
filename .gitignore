@@ -61,3 +61,5 @@ package.json
 .buckconfig
 .flowconfig
 .babelrc
+.expo/settings.json
+.expo/packager-info.json
