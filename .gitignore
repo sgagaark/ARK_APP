@@ -54,6 +54,6 @@ fastlane/screenshots
 
 __tests__/
 android/
-ios/build
+ios/build/
 .expo/settings.json
 .expo/packager-info.json
