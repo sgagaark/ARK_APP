@@ -59,11 +59,11 @@ export const LoginRouter = StackNavigator({
 
 // 這裡需要看你怎麼做(這裡是receive點船進入的畫面切換StackNavigator)
 export const ReceiveStackRouter = StackNavigator({
-  // 主頁面可以切換送或收
+  // 很多船的畫面
   Receive: {
     screen: Receive,
     navigationOptions: {
-      title: 'Receive',
+      title: '今天收到的船',
       header:{
         titleStyle: {
           fontSize: 17,
@@ -154,20 +154,20 @@ export const HistoryScreenStackRouter = StackNavigator({
 //最後app.js抓的
 export const TabRouter = TabNavigator(
   {
+    
     ReceiveStackRouter: {
       screen: ReceiveStackRouter,
       navigationOptions: {
-        // tabBar: {
-        //   label: 'Receive',
-        //   icon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />
-        // },
-        tabBarLabel: 'Receive',
-        tabBarIcon: ({ tintColor }) => (
-        <Image
-          source={require('./assets/tabicons/default/btnReceive.png')}
-          style={[styles.icon, {tintColor: tintColor}]}
-        />
-        ),
+        tabBar: {
+          label: 'Receive',
+          visible:'flase',
+          icon: ({ tintColor }) =>(
+            <Image
+              source={require('./assets/tabicons/default/btnReceive.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+          )
+        },
       },
     },
     Send: {
@@ -175,7 +175,12 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label:'Send',
-          icon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+          icon: ({ tintColor }) =>(
+            <Image
+              source={require('./assets/tabicons/default/btnSend.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+          )
         },
       },
     },
@@ -184,8 +189,13 @@ export const TabRouter = TabNavigator(
       screen: HistoryScreenStackRouter,
       navigationOptions: {
         tabBar: {
-          label: 'HistoryScreen',
-          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          label: 'History',
+          icon: ({ tintColor }) =>(
+            <Image
+              source={require('./assets/tabicons/default/btnClock.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+          )
         },
       },
     },
@@ -194,18 +204,27 @@ export const TabRouter = TabNavigator(
       navigationOptions: {
         tabBar: {
           label: 'Logout',
-          icon: ({ tintColor }) => <Icon name="build" size={35} color={tintColor} />
+          icon: ({ tintColor }) =>(
+            <Image
+              source={require('./assets/tabicons/default/faSignOutGrBig.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+          )
         },
       },
     },    
   },
   {
     animationEnabled: 'true',
+    tabBarOptions: {
+      showLabel :false,
+      activeTintColor:'#42758c',
+    }
   }
 );
 const styles = StyleSheet.create({
   icon: {
-    width: 26,
-    height: 26,
+    width: 40,
+    height: 33,
   },
 });
