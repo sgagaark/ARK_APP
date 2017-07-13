@@ -54,12 +54,6 @@ fastlane/screenshots
 
 __tests__/
 android/
-ios/
-app.json
-jsconfig.json
-package.json
-.buckconfig
-.flowconfig
-.babelrc
+ios/build
 .expo/settings.json
 .expo/packager-info.json

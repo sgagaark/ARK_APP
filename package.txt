@@ -8,10 +8,15 @@ default ver
 "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7"
 
 xcode ver
-"axios": "^0.16.1",
+    "axios": "^0.16.1",
     "react": "16.0.0-alpha.12",
     "react-native": "0.46.1",
     "react-native-elements": "^0.14.0",
     "react-native-flexi-radio-button": "^0.2.1",
     "react-native-vector-icons": "^4.2.0",
+    "react-native-segmented-control": "^1.0.0"
     "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7"
+
+
+    "react-native-svg": "^5.3.0",
+    "react-native-svg-uri": "^1.2.0",
