@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView,View,Text,StyleSheet,Button } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Button } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 
 
@@ -9,7 +9,8 @@ class Logout extends Component {
 
 
   render() {
-  const {container,butlogout,titletext,contstyle,conttext} = styles;
+    const { navigate } = this.props.navigation;
+    const { container, butlogout, titletext, contstyle, conttext } = styles;
     return (
       <View style={container}>
         <View >
@@ -19,12 +20,12 @@ class Logout extends Component {
           <Text style={conttext}>是否登出 方舟 ark ?</Text>
         </View>
         <View style={butlogout}>
-          <Button 
-            //登入會員的按鈕
-            onPress={() =>'null' }
+          <Button
+            //登出會員的按鈕
+            onPress={() => navigate('MainScreen') }
             title="確認"
             color="#ffffff"
-            style={{fontSize:18}}
+            style={{ fontSize: 18 }}
           />
         </View>
       </View>
@@ -32,23 +33,23 @@ class Logout extends Component {
   }
 }
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:'#68accb',
-    alignItems:'center',
-    justifyContent:'center',
+  container: {
+    backgroundColor: '#68accb',
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
   },
-  butlogout:{
+  butlogout: {
     width: 220,
     height: 40,
-    borderWidth:4,
+    borderWidth: 4,
     borderColor: "#e4007f",
     borderRadius: 5,
     backgroundColor: "#e4007f",
     marginTop: 26,
     marginBottom: 20,
   },
-  titletext:{
+  titletext: {
     fontSize: 24,
     color: "#ffffff",
     textShadowOffset: {
@@ -57,13 +58,13 @@ const styles = StyleSheet.create({
     },
     textShadowRadius: 4
   },
-  conttext:{
+  conttext: {
     fontSize: 18,
     color: "#ffffff"
   },
-  contstyle:{
-    marginTop:20,
-    marginBottom:60,
+  contstyle: {
+    marginTop: 20,
+    marginBottom: 60,
   },
 })
 export default Logout;

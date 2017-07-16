@@ -134,7 +134,7 @@ export const HistoryScreenStackRouter = StackNavigator({
       },
     },
   },
-  // 店送船的卡可以進入到更多裡的兩個切換頁
+  // 點送船的卡可以進入到更多裡的兩個切換頁
   // 位置D:\app\ARK_APP\components\history\historysend\hissendmore\HisSendmoreseceen.js
   HisSendmoreseceen: {
     screen: HisSendmoreseceen,
@@ -222,6 +222,7 @@ export const TabRouter = TabNavigator(
   }
 );
 
+//Login轉Content
 export const MainRouter = StackNavigator({
   MainScreen: {
     screen: LoginRouter,

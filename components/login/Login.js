@@ -88,10 +88,10 @@ class Login extends Component {
       .then((response) => {
         if (response.data['status']) {
           console.log('isLogin');
+          this.props.navigation.navigate('ContentScreen');
         } else {
           console.log('LoginFail');
         }
-        this.props.navigation.navigate('ContentScreen');
       }).catch((err) => {
         console.log(err);
       })
