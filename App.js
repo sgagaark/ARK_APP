@@ -3,9 +3,10 @@ import { ScrollView, Text, View  } from 'react-native';
 import {LoginRouter} from './Router';
 import { TabRouter } from './Router';
 // import { DrawerRouter } from './Router';
-import HisSendmoreseceen from './components/history/historysend/hissendmore/HisSendmoreseceen';
+// import HisSendmoreseceen from './components/history/historysend/hissendmore/HisSendmoreseceen';
+// import HisRecmore from './components/history/historyrecive/hisrecdmore/HisRecmore';
+import Launch from './launch';
 
-import HisRecmore from './components/history/historyrecive/hisrecdmore/HisRecmore';
 const App = () => (
       // 這是完成時需要的頁面
       <TabRouter />

@@ -20,8 +20,11 @@ onSelect(index, value){
     const {bgcolor,container,header,headertext,headerbutL,headerbutR,sendtitlestyle,titleinput,sendcontstyle,selectboat,
       RadioGroupstyle,RadioButtonstyle,Radiotext,Radiotextstyle,imgoutstyle} = styles;
     return (
-      <ScrollView>
-        <KeyboardAvoidingView behavior='position' >
+          <KeyboardAvoidingView
+      style={bgcolor}
+      behavior="padding"
+    >
+      <View>
         {/*上方藍色tab*/}
         <View style={header}>
           <View style={headerbutL}>
@@ -112,8 +115,8 @@ onSelect(index, value){
             />        
           </View>
         </View>
-        </KeyboardAvoidingView>
-      </ScrollView>
+      </View>
+       </KeyboardAvoidingView>
     );
   }
 }

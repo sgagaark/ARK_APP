@@ -9,37 +9,47 @@ class Receive extends Component {
 
 
   render() {
-    const {bgimg,botimg1,botimg2,botimg3,botimg4,botimg5} = styles;
+    const {container,bgimg,botall,botimg1,botimg2,botimg3,botimg4,botimg5} = styles;
     return (
-      <View>
+      <View style={container}>
         <View style={bgimg}>
           <Image source={require('../../assets/receive/bgSea.png')}>
           </Image>
         </View>
-        <View style={botimg1}>
-          <Receiveboat/>
-        </View>
-        <View style={botimg2}>
-          <Receiveboat/>
-        </View>
-        <View style={botimg3}>
-          <Receiveboat/>
-        </View>
-        <View style={botimg4}>
-          <Receiveboat/>
-        </View>
-        <View style={botimg5}>
-          <Receiveboat/>
-        </View>                                            
+        <View style={botall}>
+          <View style={botimg1}>
+            <Receiveboat/>
+          </View>
+          <View style={botimg2}>
+            <Receiveboat/>
+          </View>
+          <View style={botimg3}>
+            <Receiveboat/>
+          </View>
+          <View style={botimg4}>
+            <Receiveboat/>
+          </View>
+          <View style={botimg5}>
+            <Receiveboat/>
+          </View>
+      </View>
+      {/*botall                                                */}
     </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+ container:{
+  
+ },
  bgimg:{
   position:'absolute',
   zIndex:0,
+  flex:1,
+ },
+ botall:{
+  
  },
  botimg1:{
   position:'absolute',
