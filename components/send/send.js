@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, TextInput, Button, Image, Geolocation, Alert ,KeyboardAvoidingView} from 'react-native';
+import { ScrollView, StyleSheet, View, Text, TextInput, Button, Image, Geolocation, Alert, KeyboardAvoidingView } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import axios from 'axios';
 
 
@@ -47,101 +48,102 @@ class Send extends Component {
     }
     return (
       <ScrollView>
-        <KeyboardAvoidingView behavior='position' >
-        {/*上方藍色tab*/}
-        <View style={header}>
-          <View style={headerbutL}>
-            {/*取消的按鈕*/}
-            <Button
-              onPress={() => 'nule'}
-              title="取消"
-              color="#ffffff"
-              style={{ fontSize: 18 }}
-            />
-          </View>
-          <View>
-            <Text style={headertext}>請寫下您想說的話</Text>
-          </View>
-          <View style={headerbutR}>
-            {/*送出的按鈕*/}
-            <Button
-              onPress={() => this.SendBoat()}
-              title="傳送"
-              color="#ffffff"
-              style={{ fontSize: 18 }}
-            />
-          </View>
-        </View>
-        {/*主題輸入與選船*/}
-        <View style={container}>
-          <View style={sendtitlestyle}>
-            <View style={imgoutstyle}>
-              {/*這艘要依照下面RadioGroup所選擇的顏色更換圖片....這就之後再說吧*/}
-              <Image source={require('../../assets/send/bboat.png')} />
+        <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
+          {/*上方藍色tab*/}
+          <View style={header}>
+            <View style={headerbutL}>
+              {/*取消的按鈕*/}
+              <Button
+                onPress={() => 'nule'}
+                title="取消"
+                color="#ffffff"
+                style={{ fontSize: 18 }}
+              />
             </View>
-            <View style={titleinput}>
-              {/*輸入標題*/}
+            <View>
+              <Text style={headertext}>請寫下您想說的話</Text>
+            </View>
+            <View style={headerbutR}>
+              {/*送出的按鈕*/}
+              <Button
+                onPress={() => this.SendBoat()}
+                title="傳送"
+                color="#ffffff"
+                style={{ fontSize: 18 }}
+              />
+            </View>
+          </View>
+          {/*主題輸入與選船*/}
+          <View style={container}>
+            <View style={sendtitlestyle}>
+              <View style={imgoutstyle}>
+                {/*這艘要依照下面RadioGroup所選擇的顏色更換圖片....這就之後再說吧*/}
+                <Image source={require('../../assets/send/bboat.png')} />
+              </View>
+              <View style={titleinput}>
+                {/*輸入標題*/}
+                <TextInput
+                  style={{ height: 60, width: 250, marginLeft: 20, marginTop: 30, borderColor: 'gray', borderWidth: 0,fontSize:18 }}
+                  placeholder="我今天想說....  (標題)"
+                  multiline={true}
+                  onChangeText={(BoatTitle) => {
+                    this.setState({ BoatTitle });
+                  }}
+                />
+              </View>
+            </View>
+            {/*選擇船的顏色*/}
+            <View style={selectboat}>
+              <View>
+                <RadioGroup
+                  onSelect={(index, value) => this.onSelect(index, value)}
+                  style={RadioGroupstyle}
+                  color='#68accb'
+                  selectedIndex={0}
+                >
+                  <RadioButton
+                    style={RadioButtonstyle}
+                    color='#dfdfdf'
+                    value={'白色紙船：只是想說說話'}
+                  />
+
+                  <RadioButton
+                    style={RadioButtonstyle}
+                    color='#68accb'
+                    value={'藍色紙船：想要有人和我說說話'}
+                  />
+
+                  <RadioButton
+                    style={RadioButtonstyle}
+                    color='#f8e81c'
+                    value={'黃色紙船：想要有人給我方向'}
+                  />
+                  <RadioButton
+                    style={RadioButtonstyle}
+                    color='#e4007f'
+                    value={'桃紅紙船：希望可以得到諮詢'}
+                  />
+                </RadioGroup>
+
+              </View>
+              <View style={Radiotext}>
+                <Text style={Radiotextstyle}>{this.state.RadioGrouptext}</Text>
+              </View>
+            </View>
+            {/*輸入內文 */}
+            <View style={sendcontstyle}>
               <TextInput
-                style={{ height: 60, width: 250, marginLeft: 20, marginTop: 30, borderColor: 'gray', borderWidth: 0 }}
-                placeholder="我今天想說....  (標題)"
+                placeholder={'My Input'} ref={(r) => { this._textInputRef = r; }}
+                style={{ height: 295, borderColor: 'gray', borderWidth: 0,fontSize:16 }}
+                placeholder="在想些什麼....  (內文)"
                 multiline={true}
-                onChangeText={(BoatTitle) => {
-                  this.setState({ BoatTitle });
+                onChangeText={(BoatContent) => {
+                  this.setState({ BoatContent });
                 }}
               />
             </View>
           </View>
-          {/*選擇船的顏色*/}
-          <View style={selectboat}>
-            <View>
-              <RadioGroup
-                onSelect={(index, value) => this.onSelect(index, value)}
-                style={RadioGroupstyle}
-                color='#68accb'
-                selectedIndex={0}
-              >
-                <RadioButton
-                  style={RadioButtonstyle}
-                  color='#dfdfdf'
-                  value={'白色紙船：只是想說說話'}
-                />
-
-                <RadioButton
-                  style={RadioButtonstyle}
-                  color='#68accb'
-                  value={'藍色紙船：想要有人和我說說話'}
-                />
-
-                <RadioButton
-                  style={RadioButtonstyle}
-                  color='#f8e81c'
-                  value={'黃色紙船：想要有人給我方向'}
-                />
-                <RadioButton
-                  style={RadioButtonstyle}
-                  color='#e4007f'
-                  value={'桃紅紙船：希望可以得到諮詢'}
-                />
-              </RadioGroup>
-
-            </View>
-            <View style={Radiotext}>
-              <Text style={Radiotextstyle}>{this.state.RadioGrouptext}</Text>
-            </View>
-          </View>
-          {/*輸入內文 */}
-          <View style={sendcontstyle}>
-            <TextInput
-              style={{ height: 295, borderColor: 'gray', borderWidth: 0 }}
-              placeholder="在想些什麼....  (內文)"
-              multiline={true}
-              onChangeText={(BoatContent) => {
-                this.setState({ BoatContent });
-              }}
-            />
-          </View>
-        </View>
-        </KeyboardAvoidingView>
+        </KeyboardAwareScrollView>
       </ScrollView>
     );
   }

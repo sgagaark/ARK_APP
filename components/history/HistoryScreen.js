@@ -8,7 +8,7 @@ import HistorySend from './historysend/HistorySend';
 
 import { StackNavigator } from 'react-navigation';
 
-import HistoryReceiveMore from './historyreceive/receviemore/HistoryReceiveMore';
+import HistoryReceiveMore from './historyreceive/receivemore/HistoryReceiveMore';
 import HistorySendMoreScreen from './historysend/sendmore/HistorySendMoreScreen';
 // Make a component
 // 是用SegmentedControlIOS切換Historysend與Historyreceive的頁面

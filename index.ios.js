@@ -8,12 +8,12 @@ import { MainRouter } from './Router';
 import { TabRouter } from './Router';
 // import { DrawerRouter } from './Router';
 import HistorySendMoreScreen from './components/history/historysend/sendmore/HistorySendMoreScreen';
-import HistoryReceiveMore from './components/history/historyreceive/receviemore/HistoryReceiveMore';
+import HistoryReceiveMore from './components/history/historyreceive/receivemore/HistoryReceiveMore';
 
 
 const App = () => (
       <Provider store={createStore(reducers)}>
-            <TabRouter />
+            <MainRouter />
       </Provider>
 )
 

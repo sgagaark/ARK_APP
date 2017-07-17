@@ -1,50 +1,61 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-
+import moment from 'moment';
 
 // Make a component
 class HistoryReceiveMoreCardOther extends Component {
-  state = { hisrecmorecardothers: [] };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      hisrecmorecardothers: [],
+    };
+  }
 
   render() {
     const { container, top, down, nunstyle, contstyle, timestyle, butistyle, nuntext, conttext, timetext } = styles;
+    const { params } = this.props.navigation.state;
     return (
       <View style={container}>
-        <View>
-          <View style={top}>
-            <View style={nunstyle}>
-              <Text style={nuntext}>U</Text>
-            </View>
-            <View style={contstyle}>
-              <Text style={conttext}>
-                我們一起加油吧！要相信自己！
-              你一定可以完成，加油fwewfwefwfewfwefwefwefwefwef！
-            </Text>
-            </View>
-          </View>
-          {/*上方結束         */}
-          <View style={down}>
-            <View style={timestyle}>
-              <Text style={timetext}>
-                台灣 / 桃園市     >>  2017/06/03    14:30
-            </Text>
-            </View>
-            <View style={butistyle}>
-              <TouchableOpacity onPress={() => this.reportReply()}>
-                <Image
-
-                  source={require('../../../../../assets/dgrReport.png')}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-          {/*下方結束        */}
-        </View>
+        {this.renderOther()}
       </View>
     );
   }
+
+  renderOther() {
+    const { container, top, down, nunstyle, contstyle, timestyle, butistyle, nuntext, conttext, timetext } = styles;
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <View style={top}>
+          <View style={nunstyle}>
+            <Text style={nuntext}>U</Text>
+          </View>
+          <View style={contstyle}>
+            <Text style={conttext}>{params.data.boatContent}</Text>
+          </View>
+        </View>
+        {/*上方結束         */}
+        <View style={down}>
+          <View style={timestyle}>
+            <Text style={timetext}>
+              台灣 / 台中市     >>  {moment(params.data.receiveTime).format('YYYY/MM/DD     hh:mm')}
+            </Text>
+          </View>
+          <View style={butistyle}>
+            <TouchableOpacity onPress={() => this.reportReply()}>
+              <Image
+
+                source={require('../../../assets/dgrReport.png')}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        {/*下方結束        */}
+      </View>
+    )
+  }
+
   reportReply() {
     Alert.alert("檢舉", "確定要檢舉嗎？", [{ text: '確定', onPress: () => Alert.alert('提示', '已檢舉此回覆') }, { text: '取消', style: 'cancel' }])
   }

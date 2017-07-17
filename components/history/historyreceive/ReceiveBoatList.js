@@ -10,9 +10,9 @@ import {
 import { StackNavigator } from 'react-navigation';
 import moment from 'moment';
 
-export class BoatList extends Component {
+export class ReceiveBoatList extends Component {
     showBoatContent() {
-        this.props.navigation.navigate('HistoryReplyMore');
+        this.props.navigation.navigate('HistoryReceiveMore', { data: this.props });
     }
     render() {
         const { bgcolor, titletext, context, timetext, imgstyle, contstyle, redpoint, redpointstyle } = styles;
@@ -38,6 +38,9 @@ export class BoatList extends Component {
             </View>
         );
     }
+
+    
+
 }
 
 //新回覆
@@ -62,7 +65,7 @@ const BoatType = (props) => {
     const { bgcolor, titletext, context, timetext, imgstyle, contstyle, redpoint, redpointstyle } = styles;
     return (
         <View style={imgstyle}>
-            <Image source={require('../../assets/send/bboat.png')} />
+            <Image source={require('../../../assets/send/bboat.png')} />
         </View>
     )
 }
@@ -103,7 +106,7 @@ const BoatReplyIcon = (props) => {
     return (
         <View>
             {/*回復過的才出現*/}
-            <Image source={require('../../assets/iconReply.png')} />
+            <Image source={require('../../../assets/iconReply.png')} />
         </View>
     )
 }
@@ -111,20 +114,14 @@ const BoatReplyIcon = (props) => {
 //icon
 const BoatReceiveIcon = (props) => {
     const { bgcolor, titletext, context, timetext, imgstyle, contstyle, redpoint, redpointstyle } = styles;
-    if (props.receiveId) {
-        return (
-            <View>
-                {/*回復過的才出現*/}
-                <Image source={require('../../assets/iconReply.png')} />
-            </View>
-        )
-    }
+
     return (
         <View>
             {/*回復過的才出現*/}
-            <Image source={require('../../assets/iconMessage.png')} />
+            <Image source={require('../../../assets/iconReply.png')} />
         </View>
     )
+
 
 }
 
@@ -185,4 +182,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BoatList;
+export default ReceiveBoatList;

@@ -9,8 +9,10 @@ import HistorySendJourney from './HistorySendJourney';
 // Make a component
 // 是用SegmentedControlIOS切換Historysend與Historyreceive的頁面
 class HistorySendMoreScreen extends Component {
-  state = { history: [] };
-
+  constructor(props) {
+    super(props);
+    this.state = { history: [] };
+  }
 
   render() {
     const { bgcolor, header, headertext, ScrollViewstyleA, ScrollViewstyleB, semgstyle } = styles;
@@ -44,7 +46,7 @@ class HistorySendMoreScreen extends Component {
             <SegmentedControl.Item title={'全文'}>
               <ScrollView style={ScrollViewstyleA}>
                 {/*抓全文的頁面*/}
-                <HistorySendMore />
+                <HistorySendMore {...this.props} />
               </ScrollView>
             </SegmentedControl.Item>
             <SegmentedControl.Item title={'旅程'}>

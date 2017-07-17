@@ -17,13 +17,10 @@
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4C21E0B4AEC006451C7 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		2D02E4C31E0B4AEC006451C7 /* libRCTImage-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */; };
@@ -45,8 +42,10 @@
 		AF1B2F5EDA8A4DBEA3AF5388 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB137E4271C94442AB2BB84E /* SimpleLineIcons.ttf */; };
 		BB3428861845495B92A24869 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15700C2CF28405F8DBFAFC6 /* Entypo.ttf */; };
 		CAC1A1D68F3D47E7AAB9C890 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDFCC1626B274052BC6CEF64 /* Foundation.ttf */; };
-		E7CFCD951F1CC48100D11818 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCD931F1CC48100D11818 /* assets */; };
-		E7CFCD961F1CC48100D11818 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCD941F1CC48100D11818 /* main.jsbundle */; };
+		E7CFCDE41F1CCE1200D11818 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCDE11F1CCE1200D11818 /* assets */; };
+		E7CFCDE51F1CCE1200D11818 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCDE21F1CCE1200D11818 /* main.jsbundle */; };
+		E7CFCDE61F1CCE1200D11818 /* main.jsbundle.meta in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCDE31F1CCE1200D11818 /* main.jsbundle.meta */; };
+		E7CFCDEC1F1CCF5500D11818 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CFCDEB1F1CCF5500D11818 /* Images.xcassets */; };
 		E8D485F8303E403191CDB4FB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACCFA6EAAC0044B68ECEAE74 /* FontAwesome.ttf */; };
 		FC6989EF8FB24DC98B4FAA86 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1CB3ACD2A34BA0B2C0FE84 /* libRNVectorIcons.a */; };
 /* End PBXBuildFile section */
@@ -292,8 +291,6 @@
 		13B07F961A680F5B00A75B9A /* ARK_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARK_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ARK_APP/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ARK_APP/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ARK_APP/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ARK_APP/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ARK_APP/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
@@ -313,8 +310,10 @@
 		CB137E4271C94442AB2BB84E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		E15700C2CF28405F8DBFAFC6 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		E55C734163E0446BBF199BD7 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		E7CFCD931F1CC48100D11818 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
-		E7CFCD941F1CC48100D11818 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		E7CFCDE11F1CCE1200D11818 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		E7CFCDE21F1CCE1200D11818 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		E7CFCDE31F1CCE1200D11818 /* main.jsbundle.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle.meta; sourceTree = "<group>"; };
+		E7CFCDEB1F1CCF5500D11818 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ARK_APP/Images.xcassets; sourceTree = "<group>"; };
 		FA1B3445C8534FF68AEB2667 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -453,10 +452,9 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E7CFCDEB1F1CCF5500D11818 /* Images.xcassets */,
 			);
 			name = ARK_APP;
 			sourceTree = "<group>";
@@ -546,8 +544,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				E7CFCD931F1CC48100D11818 /* assets */,
-				E7CFCD941F1CC48100D11818 /* main.jsbundle */,
+				E7CFCDE11F1CCE1200D11818 /* assets */,
+				E7CFCDE21F1CCE1200D11818 /* main.jsbundle */,
+				E7CFCDE31F1CCE1200D11818 /* main.jsbundle.meta */,
 				13B07FAE1A68108700A75B9A /* ARK_APP */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ARK_APPTests */,
@@ -976,19 +975,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7CFCD951F1CC48100D11818 /* assets in Resources */,
-				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				BB3428861845495B92A24869 /* Entypo.ttf in Resources */,
 				942B10979AA44FCA826CC688 /* EvilIcons.ttf in Resources */,
-				E7CFCD961F1CC48100D11818 /* main.jsbundle in Resources */,
 				E8D485F8303E403191CDB4FB /* FontAwesome.ttf in Resources */,
 				CAC1A1D68F3D47E7AAB9C890 /* Foundation.ttf in Resources */,
 				7BE8FEF0360F40A3AD6204FC /* Ionicons.ttf in Resources */,
+				E7CFCDEC1F1CCF5500D11818 /* Images.xcassets in Resources */,
 				89C5CD91D31540CEABB9DF1A /* MaterialCommunityIcons.ttf in Resources */,
+				E7CFCDE61F1CCE1200D11818 /* main.jsbundle.meta in Resources */,
 				9B71E647F2A44F4B918F334A /* MaterialIcons.ttf in Resources */,
 				4C5BE715605B43ECB98976E4 /* Octicons.ttf in Resources */,
+				E7CFCDE41F1CCE1200D11818 /* assets in Resources */,
 				AF1B2F5EDA8A4DBEA3AF5388 /* SimpleLineIcons.ttf in Resources */,
+				E7CFCDE51F1CCE1200D11818 /* main.jsbundle in Resources */,
 				50ADC1107ED4461EBBA306BD /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,7 +996,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,18 +1089,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = ARK_APP;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1163,6 +1149,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 5F5VC2P39P;
@@ -1178,6 +1165,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ARK_APP;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1186,6 +1174,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5F5VC2P39P;
 				HEADER_SEARCH_PATHS = (
@@ -1200,6 +1189,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ARK_APP;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

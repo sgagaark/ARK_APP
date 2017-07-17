@@ -19,7 +19,7 @@ class HistorySend extends Component {
   render() {
     return (
       <View>
-        <HistorySendCard {...this.props} />
+        <HistorySendCard  {...this.props} />
       </View>
     );
   }

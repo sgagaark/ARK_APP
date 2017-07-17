@@ -1,55 +1,52 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-
+import moment from 'moment';
 
 // Make a component
-const HistorySendMoreCardMain = (props) => {
-  state = { hisSendmorecardmy: [] };
-
-
-  const { container, top, down, titletext, conttext, timetext, imgstyle, maptext, maptimestyle, mapstyle, titlstyle, contstyle } = styles;
-  return (
-    <View style={container}>
-      <View>
-        <View style={top}>
-          <View style={imgstyle}>
-            <Image source={require('../../../../../assets/send/bboat.png')} />
-          </View>
-          <View style={maptimestyle}>
-            <View style={mapstyle}>
-              {/*地點*/}
-              <Text style={maptext}>台灣/台北市</Text>
+export class HistorySendMoreCardMain extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hisSendmorecardmy: [] };
+  }
+  render() {
+    const { container, top, down, titletext, conttext, timetext, imgstyle, maptext, maptimestyle, mapstyle, titlstyle, contstyle } = styles;
+    const { params } = this.props.navigation.state;
+    return (
+      <View style={container}>
+        <View>
+          <View style={top}>
+            <View style={imgstyle}>
+              <Image source={require('../../../../../assets/send/bboat.png')} />
             </View>
-            <View>
-              {/*時間*/}
-              <Text style={timetext}>>>  2017/06/02    14:00</Text>
+            <View style={maptimestyle}>
+              <View style={mapstyle}>
+                {/*地點*/}
+                <Text style={maptext}>台灣/台北市</Text>
+              </View>
+              <View>
+                {/*時間*/}
+                <Text style={timetext}>>>  {moment(params.data.sendTime).format('YYYY/MM/DD     hh:mm')}</Text>
+              </View>
             </View>
           </View>
-        </View>
-        {/*上方結束*/}
-        <View style={down}>
-          <View style={titlstyle}>
-            {/*主題         */}
-            <Text style={titletext}>我一點都不勇敢，希望有人可以鼓勵我，幫我加油打氣！</Text>
+          {/*上方結束*/}
+          <View style={down}>
+            <View style={titlstyle}>
+              {/*主題         */}
+              <Text style={titletext}>{params.data.boatTitle}</Text>
+            </View>
+            <View style={contstyle}>
+              {/*內文*/}
+              <Text style={conttext}>{params.data.boatContent}
+              </Text>
+            </View>
           </View>
-          <View style={contstyle}>
-            {/*內文*/}
-            <Text style={conttext}>別擔心，你一定可以，要好好加油，這是我對自己說的話，但有時還是希望有其他人可以這樣對我說！
-
-              別擔心，你一定可以，要好好加油
-              這是我對自己說的話，
-              但有時還是希望有其他人可以這樣對我說！
-
-              別擔心，你一定可以，要好好加油，這是我對自己說的話，但有時還是希望有其他人可以這樣對我說！
-            </Text>
-          </View>
+          {/*下方結束        */}
         </View>
-        {/*下方結束        */}
       </View>
-    </View>
-  );
-
+    );
+  }
 }
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, Image, Button } from 'react-native';
 import { TabNavigator, StackNavigator, } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -15,8 +15,10 @@ import Receive from './components/receive/receive';
 import Send from './components/send/send';
 import HistoryScreen from './components/history/HistoryScreen';
 
-import HistoryReceiveMore from './components/history/historyreceive/receviemore/HistoryReceiveMore';
+import HistoryReceiveMore from './components/history/historyreceive/receivemore/HistoryReceiveMore';
 import HistorySendMoreScreen from './components/history/historysend/sendmore/HistorySendMoreScreen';
+import ReceiveReply from './components/receive/ReceiveReply';
+import ReceiveReplyCardInput from './components/receive/ReceiveReplyCard/ReceiveReplyCardInput'
 
 export const LoginRouter = StackNavigator({
   Login: {
@@ -80,8 +82,8 @@ export const ReceiveStackRouter = StackNavigator({
   },
   // 點船進入的畫面
   // 位置D:\app\ARK_APP\components\history\historyreceive/receviemore/HistoryReceiveMore.js
-  HistoryReceiveMore: {
-    screen: HistoryReceiveMore,
+  ReceiveReply: {
+    screen: ReceiveReply,
     navigationOptions: {
       title: '收到的船',
       header: {
@@ -91,7 +93,15 @@ export const ReceiveStackRouter = StackNavigator({
         },
         style: {
           backgroundColor: '#68accb'
-        },
+        }/*,
+        right: (
+          <Button
+            title='送出'
+            onPress={() => ReceiveReplyCardInput.sendReply()}
+          />
+        )*/
+
+        ,
       },
     },
   },
@@ -121,7 +131,7 @@ const HistoryScreenStackRouter = StackNavigator({
   },
   // 點收船的卡可以進入到更多
   // 位置D:\app\ARK_APP\components\history\historyrecive\hisrecdmore\HisRecmore.js
-  HistoryReplyMore: {
+  HistoryReceiveMore: {
     screen: HistoryReceiveMore,
     navigationOptions: {
       title: '收到的船',

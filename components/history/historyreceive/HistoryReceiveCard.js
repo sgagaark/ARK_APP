@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, ListView, Alert, TouchableHighlight } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import axios from 'axios';
-import BoatList from '../BoatList';
+import ReceiveBoatList from './ReceiveBoatList';
 
 
 // Make a component
@@ -34,9 +34,8 @@ class HistoryReceiveCard extends Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <BoatList {...rowData} {...this.props} />
+        renderRow={(rowData) => <ReceiveBoatList {...rowData} {...this.props} />
         }
-
       />
     )
   }
@@ -51,7 +50,7 @@ class HistoryReceiveCard extends Component {
       timeout: 5000,
       maximumAge: 0
     };
-    axios('/GetReplyBoat', {
+    axios('/GetReplyBoatByUserId', {
       method: 'post',
       baseURL: 'http://www.rongserver.com/ark/api/',
       data: {

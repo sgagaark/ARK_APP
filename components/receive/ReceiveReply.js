@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-import HistoryReceiveMoreCardMain from './HistoryReceiveMoreCard/HistoryReceiveMoreCardMain';
-import HistoryReceiveMoreCardOther from './HistoryReceiveMoreCard/HistoryReceiveMoreCardOther';
-import HistoryReceiveMoreCardInput from './HistoryReceiveMoreCard/HistoryReceiveMoreCardInput';
-// Make a component
-class HistoryReceiveMore extends Component {
-  state = { hissendmore: [] };
+import axios from 'axios';
 
+import ReceiveReplyCardMain from './ReceiveReplyCard/ReceiveReplyCardMain';
+import ReceiveReplyCardOther from './ReceiveReplyCard/ReceiveReplyCardOther';
+import ReceiveReplyCardInput from './ReceiveReplyCard/ReceiveReplyCardInput';
+// Make a component
+class ReceiveReply extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hissendmore: [] };
+  }
 
   render() {
     const { bgcolor, } = styles;
     return (
       <ScrollView style={bgcolor}>
         <View>
-          <HistoryReceiveMoreCardMain />
+          <ReceiveReplyCardMain {...this.props} />
         </View>
         {/*回復過出現*/}
         <View>
-          {<HistoryReceiveMoreCardOther/>}
+          {/*<ReceiveReplyCardOther />*/}
         </View>
         {/*沒回覆過出現*/}
         <View>
-          {/* <HistoryRecivecMoreCardInput/>*/}
+          {<ReceiveReplyCardInput {...this.props}/>}
         </View>
       </ScrollView>
 
@@ -35,4 +39,4 @@ const styles = StyleSheet.create({
     // alignItems:'center',
   }
 })
-export default HistoryReceiveMore;
+export default ReceiveReply;

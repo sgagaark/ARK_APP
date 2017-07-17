@@ -3,39 +3,89 @@ import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 //import SvgUri from 'react-native-svg-uri';
 import Receiveboat from './receiveboat';
+import axios from 'axios';
+
 // Make a component
 class Receive extends Component {
   constructor(props) {
     super(props);
-    this.state = { receive: [] };
+    this.state = {
+      receive: [],
+      isLoading: true
+    };
   }
 
 
   render() {
     const { bgimg, botimg1, botimg2, botimg3, botimg4, botimg5 } = styles;
+    if (this.state.isLoading) {
+      return (
+        <View />
+      )
+    }
     return (
-      <View style={container}>
+      <View>
         <View style={bgimg}>
           <Image source={require('../../assets/receive/bgSea.png')}>
           </Image>
         </View>
         <View style={botimg1}>
-          <Receiveboat {...this.props} />
+          <Receiveboat data={this.state.data[0]}{...this.props} />
         </View>
         <View style={botimg2}>
-          <Receiveboat {...this.props} />
+          <Receiveboat data={this.state.data[1]} {...this.props} />
         </View>
         <View style={botimg3}>
-          <Receiveboat {...this.props} />
+          <Receiveboat data={this.state.data[2]} {...this.props} />
         </View>
         <View style={botimg4}>
-          <Receiveboat {...this.props} />
+          <Receiveboat data={this.state.data[3]} {...this.props} />
         </View>
         <View style={botimg5}>
-          <Receiveboat {...this.props} />
+          <Receiveboat data={this.state.data[4]} {...this.props} />
         </View>
       </View>
     );
+  }
+  componentDidMount() {
+    this.getAroundBoat();
+  }
+  getAroundBoat() {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    navigator.geolocation.getCurrentPosition((pos) => {
+      this.state.userlatitude = pos.coords.latitude;
+      this.state.userlongitude = pos.coords.longitude;
+
+      axios('/GetAroundBoat', {
+        method: 'post',
+        baseURL: 'http://www.rongserver.com/ark/api/',
+        data: {
+          boatLatitude: this.state.userlatitude,
+          boatLongitude: this.state.userlongitude,
+        }
+      })
+        .then((response) => {
+          if (response.data['status']) {
+            this.setState({
+              isLoading: false,
+              data: response.data['data']
+            })
+          } else {
+            console.log('Fail');
+          }
+        }).catch((err) => {
+          console.log(err);
+        })
+
+    }, (error) => {
+      console.log(error);
+    }, options)
+
+
   }
 }
 

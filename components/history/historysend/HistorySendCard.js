@@ -11,7 +11,7 @@ import {
 
 import { Tile, List, ListItem } from 'react-native-elements';
 import axios from 'axios';
-import BoatList from '../BoatList';
+import HistoryBoatList from './SendBoatList';
 // Make a component
 class HistorySendCard extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class HistorySendCard extends Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <BoatList {...rowData}{...this.props} />}
+        renderRow={(rowData) => <HistoryBoatList {...rowData}{...this.props} />}
       />
     )
   }

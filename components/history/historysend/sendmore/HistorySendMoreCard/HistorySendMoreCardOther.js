@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
+import moment from 'moment';
 
 
 // Make a component
@@ -22,18 +23,15 @@ export class HistorySendMoreCardOther extends Component {
               <Text style={nuntext}>1</Text>
             </View>
             <View style={contstyle}>
-              <Text style={conttext}>
-                我們一起加油吧！要相信自己！
-              你一定可以完成，加油fwewfwefwfewfwefwefwefwefwef！
-            </Text>
+              <Text style={conttext}>{this.props.boatContent}</Text>
             </View>
           </View>
           {/*上方結束         */}
           <View style={down}>
             <View style={timestyle}>
               <Text style={timetext}>
-                台灣 / 桃園市     >>  2017/06/03    14:30
-            </Text>
+                台灣 / 台中市     >>  {moment(this.props.receiveTime).format('YYYY/MM/DD     hh:mm')}
+              </Text>
             </View>
             <View style={butistyle}>
               <TouchableOpacity onPress={() => this.reportReply()}>

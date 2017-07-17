@@ -16,7 +16,7 @@ class Receiveboat extends Component {
     return (
 
       <View style={botimg}>
-        <Text style={textstyle}>新北市</Text>
+        <Text style={textstyle}>台中市</Text>
         <TouchableOpacity onPress={() => { this.showBoat() }}>
           <Image
             source={require('../../assets/receive/bboatLine.png')}
@@ -27,7 +27,7 @@ class Receiveboat extends Component {
   }
 
   showBoat() {
-    this.props.navigation.navigate('HistoryReceiveMore');
+    this.props.navigation.navigate('ReceiveReply', { data: this.props.data });
   }
 }
 
