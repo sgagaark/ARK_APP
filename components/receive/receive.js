@@ -14,7 +14,7 @@ class Receive extends Component {
   render() {
     const { bgimg, botimg1, botimg2, botimg3, botimg4, botimg5 } = styles;
     return (
-      <View>
+      <View style={container}>
         <View style={bgimg}>
           <Image source={require('../../assets/receive/bgSea.png')}>
           </Image>

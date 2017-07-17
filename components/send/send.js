@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, TextInput, Button, Image, Geolocation, Alert } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, TextInput, Button, Image, Geolocation, Alert ,KeyboardAvoidingView} from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button'
 import axios from 'axios';
@@ -46,7 +46,8 @@ class Send extends Component {
       });
     }
     return (
-      <View style={bgcolor}>
+      <ScrollView>
+        <KeyboardAvoidingView behavior='position' >
         {/*上方藍色tab*/}
         <View style={header}>
           <View style={headerbutL}>
@@ -140,7 +141,8 @@ class Send extends Component {
             />
           </View>
         </View>
-      </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     );
   }
   SendBoat() {
