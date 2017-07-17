@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-import HisSendcard from './HisSendcard';
+import HistorySendCard from './HistorySendCard';
 import axios from 'axios';
 
 // 這頁是抓取HisSendcard的內容
 // Make a component
-class Historysend extends Component {
-  state = {
-    history: [],
-  };
+class HistorySend extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: []
+    };
+  }
 
 
 
   render() {
     return (
       <View>
-        <HisSendcard />
+        <HistorySendCard {...this.props} />
       </View>
     );
   }
 }
-export default Historysend;
+export default HistorySend;

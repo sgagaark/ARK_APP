@@ -15,8 +15,8 @@ import Receive from './components/receive/receive';
 import Send from './components/send/send';
 import HistoryScreen from './components/history/HistoryScreen';
 
-import HisRecmore from './components/history/historyrecive/hisrecdmore/HisRecmore';
-import HisSendmoreseceen from './components/history/historysend/hissendmore/HisSendmoreseceen';
+import HistoryReceiveMore from './components/history/historyreceive/receviemore/HistoryReceiveMore';
+import HistorySendMoreScreen from './components/history/historysend/sendmore/HistorySendMoreScreen';
 
 export const LoginRouter = StackNavigator({
   Login: {
@@ -67,7 +67,7 @@ export const ReceiveStackRouter = StackNavigator({
     screen: Receive,
     navigationOptions: {
       title: '今天收到的船',
-      header:{
+      header: {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
@@ -79,9 +79,9 @@ export const ReceiveStackRouter = StackNavigator({
     },
   },
   // 點船進入的畫面
-  // 位置D:\app\ARK_APP\components\history\historyrecive\hisrecdmore\HisRecmore.js
-  HisRecmore: {
-    screen: HisRecmore,
+  // 位置D:\app\ARK_APP\components\history\historyreceive/receviemore/HistoryReceiveMore.js
+  HistoryReceiveMore: {
+    screen: HistoryReceiveMore,
     navigationOptions: {
       title: '收到的船',
       header: {
@@ -95,11 +95,13 @@ export const ReceiveStackRouter = StackNavigator({
       },
     },
   },
-});
+}, {
+    mode: 'modal'
+  });
 
 
 // 這裡需要看你怎麼做(這裡是history裡面的StackNavigator)
-export const HistoryScreenStackRouter = StackNavigator({
+const HistoryScreenStackRouter = StackNavigator({
   // 主頁面可以切換送或收
   // 位置D:\app\ARK_APP\components\history\HistoryScreen.js
   HistoryScreen: {
@@ -119,8 +121,8 @@ export const HistoryScreenStackRouter = StackNavigator({
   },
   // 點收船的卡可以進入到更多
   // 位置D:\app\ARK_APP\components\history\historyrecive\hisrecdmore\HisRecmore.js
-  HisRecmore: {
-    screen: HisRecmore,
+  HistoryReplyMore: {
+    screen: HistoryReceiveMore,
     navigationOptions: {
       title: '收到的船',
       header: {
@@ -131,13 +133,13 @@ export const HistoryScreenStackRouter = StackNavigator({
         style: {
           backgroundColor: '#68accb'
         },
-      },
+      }
     },
   },
   // 點送船的卡可以進入到更多裡的兩個切換頁
-  // 位置D:\app\ARK_APP\components\history\historysend\hissendmore\HisSendmoreseceen.js
-  HisSendmoreseceen: {
-    screen: HisSendmoreseceen,
+  // 位置D:\app\ARK_APP\components\history\historysend\sendmore\HistorySendMoreScreen.js
+  HistorySendMoreScreen: {
+    screen: HistorySendMoreScreen,
     navigationOptions: {
       title: '送出的訊息',
       header: {
@@ -151,13 +153,15 @@ export const HistoryScreenStackRouter = StackNavigator({
       },
     },
   },
-});
+}, {
+    mode: 'modal'
+  });
 
 
 //最後app.js抓的
 export const TabRouter = TabNavigator(
   {
-    
+
     ReceiveStackRouter: {
       screen: ReceiveStackRouter,
       navigationOptions: {

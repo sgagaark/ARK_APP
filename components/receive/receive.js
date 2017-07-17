@@ -5,7 +5,10 @@ import { Tile, List, ListItem } from 'react-native-elements';
 import Receiveboat from './receiveboat';
 // Make a component
 class Receive extends Component {
-  state = { receive: [] };
+  constructor(props) {
+    super(props);
+    this.state = { receive: [] };
+  }
 
 
   render() {
@@ -17,19 +20,19 @@ class Receive extends Component {
           </Image>
         </View>
         <View style={botimg1}>
-          <Receiveboat />
+          <Receiveboat {...this.props} />
         </View>
         <View style={botimg2}>
-          <Receiveboat />
+          <Receiveboat {...this.props} />
         </View>
         <View style={botimg3}>
-          <Receiveboat />
+          <Receiveboat {...this.props} />
         </View>
         <View style={botimg4}>
-          <Receiveboat />
+          <Receiveboat {...this.props} />
         </View>
         <View style={botimg5}>
-          <Receiveboat />
+          <Receiveboat {...this.props} />
         </View>
       </View>
     );

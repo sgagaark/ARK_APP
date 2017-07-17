@@ -1,5 +1,0 @@
-HisSendmoreseceen是用來切換HisSendmore和HisSendjourney的上方切換按鈕
-
-HisSendmoreCard資料夾裡面是自己寫過的內容與別人回復的內容
-
-HisSendjourneyCard資料夾裡面是到過哪裡的船的內容
