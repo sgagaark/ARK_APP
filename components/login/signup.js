@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button, Image, Linking } from 'react-native';
 import { List, ListItem, FormInput } from 'react-native-elements';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 // Make a component
 const Signup = (props) => {
   // state = { Forgot: [] };
-    const {navigate} = props.navigation;
-    const {container,butlogin,butforgot,loginsty,textitle,titlemargin,textlist} = styles;
-    return (
+  const { navigate } = props.navigation;
+  const { containerALL, container, butlogin, butforgot, loginsty, textitle, titlemargin, textlist } = styles;
+  return (
+    <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }} style={containerALL}>
       <View style={container}>
         <View style={titlemargin}>
           <Text style={textitle}>註冊會員</Text>
@@ -17,55 +18,63 @@ const Signup = (props) => {
           <View style={loginsty}>
             {/*設定帳號*/}
             <FormInput />
-          </View>       
-            <Text style={textlist}>設定密碼</Text>
+          </View>
+          <Text style={textlist}>設定密碼</Text>
           <View style={loginsty}>
             {/*設定密碼*/}
             <FormInput />
           </View>
-            <Text style={textlist}>確認密碼</Text>
+          <Text style={textlist}>確認密碼</Text>
           <View style={loginsty}>
             {/*確認密碼*/}
             <FormInput />
           </View>
         </View>
         <View style={butlogin}>
-          <Button 
+          <Button
             onPress={() => navigate('Signup2')}
             title="下一步"
             color="#ffffff"
-            style={{fontSize:18}}
+            style={{ fontSize: 18 }}
           />
         </View>
       </View>
-    );
+    </KeyboardAwareScrollView>
+  );
 }
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:'#68accb',
-    alignItems:'center',
-    justifyContent:'center',
+  containerALL:{
+    backgroundColor: '#68accb',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     flex: 1,
   },
-  titlemargin:{
+  container: {
+    //backgroundColor: '#68accb',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:150,
+    //flex: 1,
+  },
+  titlemargin: {
     marginBottom: 20,
   },
-  textitle:{
-    color:'#ffffff',
+  textitle: {
+    color: '#ffffff',
     fontSize: 24,
     textShadowColor: 'gray',
     textShadowOffset: {
       width: 0,
       height: 1
-      },
+    },
     textShadowRadius: 4
-  },  
-  textlist:{
+  },
+  textlist: {
     fontSize: 14,
     textAlign: "left",
     color: "#ffffff"
   },
-  loginsty:{
+  loginsty: {
     width: 220,
     height: 40,
     borderRadius: 5,
@@ -75,32 +84,32 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 1
-      },
+    },
     shadowRadius: 3,
     shadowOpacity: 1,
     marginBottom: 25,
     marginTop: 5,
-    paddingTop:0,
-  },  
-  butlogin:{
+    paddingTop: 0,
+  },
+  butlogin: {
     width: 220,
     height: 40,
-    borderWidth:4,
+    borderWidth: 4,
     borderColor: "#e4007f",
     borderRadius: 5,
     backgroundColor: "#e4007f",
     marginTop: 26,
     marginBottom: 20,
   },
-  butforgot:{
-    flexDirection:'row',
-    justifyContent:'center',
+  butforgot: {
+    flexDirection: 'row',
+    justifyContent: 'center',
 
   },
-  butforgotin:{
+  butforgotin: {
     height: 40,
   },
-  
+
 })
 
 export default Signup;
