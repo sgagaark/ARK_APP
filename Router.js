@@ -66,17 +66,19 @@ export const LoginRouter = StackNavigator({
 export const ReceiveStackRouter = StackNavigator({
   // 很多船的畫面
   Receive: {
-    screen: Receive,
+    screen: Receive,   
     navigationOptions: {
-      title: '今天收到的船',
-      header: {
+      //title: '今天收到的船',
+      header:
+      {
         titleStyle: {
           fontSize: 17,
           color: '#ffffff'
         },
         style: {
-          backgroundColor: '#68accb'
-        },
+          backgroundColor: '#68accb',
+          height:0,
+        },        
       },
     },
   },

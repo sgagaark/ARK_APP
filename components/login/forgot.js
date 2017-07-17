@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button, Image, Linking, Alert } from 'react-native';
 import { List, ListItem, FormInput } from 'react-native-elements';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 // Make a component
 class Forgot extends Component {
   // state = { Forgot: [] };
-  //const {navigate} = props.navigation;
-  //const {container,butlogin,butforgot,loginsty,textitle,
-  //titlemargin,textlist,butresend,texttitle2,titlemargin2} = styles;
-  render() {
+  render(){
+    const {navigate} = props.navigation;
+    const {containerALL,container,butlogin,butforgot,loginsty,textitle,
+      titlemargin,textlist,butresend,texttitle2,titlemargin2} = styles;
     return (
-      <View style={styles.container}>
-        <View style={styles.titlemargin}>
-          <Text style={styles.textitle}>忘記密碼</Text>
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}style={containerALL}>
+      <View style={container}>
+        <View style={titlemargin}>
+          <Text style={textitle}>忘記密碼</Text>
         </View>
         <View style={styles.titlemargin2}>
           <Text style={styles.texttitle2}>請於輸入註冊之電子信箱，系統將寄送新密碼給您。</Text>
@@ -30,17 +31,25 @@ class Forgot extends Component {
           />
         </View>
       </View>
+      </KeyboardAwareScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
+  containerALL:{
     backgroundColor: '#68accb',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     flex: 1,
   },
-  titlemargin: {
+  container: {
+    //backgroundColor: '#68accb',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:150,
+    //flex: 1,
+  },
+  titlemargin:{
     marginBottom: 20,
   },
   titlemargin2: {

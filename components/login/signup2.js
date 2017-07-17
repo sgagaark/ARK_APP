@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button, Image, Linking, Alert } from 'react-native';
 import { Tile, List, ListItem, FormInput } from 'react-native-elements';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import axios from 'axios';
 
 // Make a component
@@ -12,10 +13,12 @@ class Signup2 extends Component {
     };
   }
   render() {
-    const { navigate } = this.props.navigation;
-    const { container, butlogin, butforgot, loginsty, textitle,
-      titlemargin, textlist, butresend, texttitle2, titlemargin2 } = styles;
+    const {navigate} = props.navigation;
+    const {containerALL,container,butlogin,butforgot,loginsty,textitle,
+      titlemargin,textlist,butresend,texttitle2,titlemargin2} = styles;
+
     return (
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}style={containerALL}>
       <View style={container}>
         <View style={titlemargin}>
           <Text style={textitle}>電子信箱認證</Text>
@@ -44,17 +47,25 @@ class Signup2 extends Component {
           />
         </View>
       </View>
+      </KeyboardAwareScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
+  containerALL:{
     backgroundColor: '#68accb',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     flex: 1,
   },
-  titlemargin: {
+  container: {
+    //backgroundColor: '#68accb',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:150,
+    //flex: 1,
+  },
+  titlemargin:{
     marginBottom: 20,
   },
   titlemargin2: {

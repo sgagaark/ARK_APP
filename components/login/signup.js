@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button, Image, Linking } from 'react-native';
 import { List, ListItem, FormInput } from 'react-native-elements';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import axios from 'axios';
 
 // Make a component
@@ -18,6 +19,8 @@ class Signup extends Component {
     const { navigate } = this.props.navigation;
     const { container, butlogin, butforgot, loginsty, textitle, titlemargin, textlist } = styles;
     return (
+    <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }} style={containerALL}>
+
       <View style={container}>
         <View style={titlemargin}>
           <Text style={textitle}>註冊會員</Text>
@@ -79,7 +82,8 @@ class Signup extends Component {
           />
         </View>
       </View>
-    );
+    </KeyboardAwareScrollView>
+  );
   }
 
   //註冊帳號 
@@ -114,11 +118,18 @@ class Signup extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
+  containerALL:{
     backgroundColor: '#68accb',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    flex: 1,
+  },
+  container: {
+    //backgroundColor: '#68accb',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
+    paddingTop:150,
+    //flex: 1,
   },
   titlemargin: {
     marginBottom: 20,

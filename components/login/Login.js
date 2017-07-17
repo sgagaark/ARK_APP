@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Button, Linking } from 'react-native';
-import { FormLabel, FormValidationMessage, FormInput } from 'react-native-elements';
+import { FormLabel, FormValidationMessage, FormInput, } from 'react-native-elements';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import axios from 'axios';
 // Make a component
 class Login extends Component {
@@ -12,9 +13,10 @@ class Login extends Component {
     };
   }
   render() {
-    const { navigate } = this.props.navigation;
-    const { container, textitle, butlogin, butforgot, butforgotin, loginsty, titlemargin } = styles;
-    return (
+  const { navigate } = props.navigation;
+  const { containerALL,container, textitle, butlogin, butforgot, butforgotin, loginsty, titlemargin } = styles;
+  return (
+    <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}style={containerALL}>
       <View style={container}>
         <View style={titlemargin}>
           <Text style={textitle}>登入會員</Text>
@@ -45,6 +47,7 @@ class Login extends Component {
               this.setState({ passwd });
             }} />
         </View>
+
         <View style={butlogin}>
           <Button
             //登入會員的按鈕
@@ -73,7 +76,9 @@ class Login extends Component {
           </View>
         </View>
       </View>
-    );
+
+    </KeyboardAwareScrollView>
+  );
   }
   UserLogin() {
     axios('/UserLogin', {
@@ -100,11 +105,18 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerALL:{
     backgroundColor: '#68accb',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    flex: 1,
+  },
+  container: {
+    //backgroundColor: '#68accb',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
+    paddingTop:150,
+    //flex: 1,
   },
   titlemargin: {
     marginBottom: 20,

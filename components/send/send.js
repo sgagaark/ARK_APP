@@ -34,11 +34,15 @@ class Send extends Component {
     })
   }
 
-
+  clearText() {
+    this.refs['textInput'].setNativeProps({ text: '' });
+    this._textInputRef.setNativeProps({ text: '' });
+  }
+  
   render() {
     const extractText = (option) => option.label;
 
-    const { bgcolor, container, header, headertext, headerbutL, headerbutR, sendtitlestyle, titleinput, sendcontstyle, selectboat,
+    const { containerAll, bgcolor, container, header, headertext, headerbutL, headerbutR, sendtitlestyle, titleinput, sendcontstyle, selectboat,
       RadioGroupstyle, RadioButtonstyle, Radiotext, Radiotextstyle, imgoutstyle } = styles;
 
     function setSelectedOption(selectedOption) {
@@ -47,14 +51,14 @@ class Send extends Component {
       });
     }
     return (
-      <ScrollView>
-        <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
+        <ScrollView>
           {/*上方藍色tab*/}
           <View style={header}>
             <View style={headerbutL}>
               {/*取消的按鈕*/}
               <Button
-                onPress={() => 'nule'}
+                onPress={() => this.clearText()}
                 title="取消"
                 color="#ffffff"
                 style={{ fontSize: 18 }}
@@ -143,8 +147,8 @@ class Send extends Component {
               />
             </View>
           </View>
-        </KeyboardAwareScrollView>
       </ScrollView>
+        </KeyboardAwareScrollView>
     );
   }
   SendBoat() {
@@ -186,9 +190,11 @@ class Send extends Component {
   }
 }
 const styles = StyleSheet.create({
+  containerAll: {
+    // flex: 1,
+  },
   bgcolor: {
     backgroundColor: '#f9f9f9',
-    flex: 1,
   },
   container: {
     justifyContent: 'center',
