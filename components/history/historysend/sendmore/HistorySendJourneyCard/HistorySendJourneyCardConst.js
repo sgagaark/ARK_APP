@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView,StyleSheet,View,Text,Image } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-
+import moment from 'moment';
 
 // Make a component
 class HisSendjourneyCardconst extends Component {
@@ -14,10 +14,10 @@ class HisSendjourneyCardconst extends Component {
       <View style={container}>
         <View style={leftstyle}>
           <View>
-            <Text style={textstyle}>2017/06/02</Text>
+            <Text style={textstyle}>{moment(moment.now()).format('YYYY/MM/DD')}</Text>
           </View>
           <View>
-            <Text style={textstyle}>14:30</Text>
+            <Text style={textstyle}>{moment(moment.now()).format('hh:mm')}</Text>
           </View>          
         </View>
         <View style={centerstyle}>
@@ -27,7 +27,7 @@ class HisSendjourneyCardconst extends Component {
         </View>
         <View style={rightstyle}>
           <View>
-            <Text style={textstyle}>台灣 / 桃園市</Text>            
+            <Text style={textstyle}>台灣 / 台中市</Text>            
           </View>
         </View>                
       </View>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 
   },
   centerstyle:{
-    marginLeft:20,
+    marginLeft:23,
     marginRight:20,
   },
   rightstyle:{

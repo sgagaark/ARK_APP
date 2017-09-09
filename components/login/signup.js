@@ -17,7 +17,7 @@ class Signup extends Component {
   render() {
     // state = { Forgot: [] };
     const { navigate } = this.props.navigation;
-    const { container, butlogin, butforgot, loginsty, textitle, titlemargin, textlist } = styles;
+    const { containerALL,container, butlogin, butforgot, loginsty, textitle, titlemargin, textlist } = styles;
     return (
     <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }} style={containerALL}>
 

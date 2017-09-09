@@ -17,16 +17,25 @@ class Receive extends Component {
 
 
   render() {
-    const { bgimg, botimg1, botimg2, botimg3, botimg4, botimg5 } = styles;
+    const { bgimgall, bgimg, bgimgin, botimg1, botimg2, botimg3, botimg4, botimg5 } = styles;
     if (this.state.isLoading) {
       return (
-        <View />
+        <View style={bgimgall}>
+          <View style={bgimg}>
+            <Image source={require('../../assets/receive/bgSea.png')}
+              style={bgimgin}
+            >
+            </Image>
+          </View>
+        </View>
       )
     }
     return (
-      <View>
+      <View style={bgimgall}>
         <View style={bgimg}>
-          <Image source={require('../../assets/receive/bgSea.png')}>
+          <Image source={require('../../assets/receive/bgSea.png')}
+            style={bgimgin}
+          >
           </Image>
         </View>
         <View style={botimg1}>
@@ -47,6 +56,7 @@ class Receive extends Component {
       </View>
     );
   }
+
   componentDidMount() {
     this.getAroundBoat();
   }
@@ -90,9 +100,21 @@ class Receive extends Component {
 }
 
 const styles = StyleSheet.create({
+  bgimgall: {
+    flex: 1,
+
+    backgroundColor: '#68accb',
+    justifyContent: 'center',
+    alignItems: 'center',
+    //alignItems:'stretch',
+  },
   bgimg: {
-    position: 'absolute',
-    zIndex: 0,
+    //position: 'absolute',
+    //zIndex: 0,
+  },
+  bgimgin: {
+    flex: 1,
+    resizeMode: 'cover',
   },
   botimg1: {
     position: 'absolute',

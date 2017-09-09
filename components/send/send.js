@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, TextInput, Button, Image, Geolocation, Alert, KeyboardAvoidingView } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 import axios from 'axios';
 
 
@@ -51,7 +51,7 @@ class Send extends Component {
       });
     }
     return (
-      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}style={containerAll}>
         <ScrollView>
           {/*上方藍色tab*/}
           <View style={header}>
@@ -87,6 +87,7 @@ class Send extends Component {
               <View style={titleinput}>
                 {/*輸入標題*/}
                 <TextInput
+                ref={'textInput'}
                   style={{ height: 60, width: 250, marginLeft: 20, marginTop: 30, borderColor: 'gray', borderWidth: 0,fontSize:18 }}
                   placeholder="我今天想說....  (標題)"
                   multiline={true}
@@ -100,6 +101,7 @@ class Send extends Component {
             <View style={selectboat}>
               <View>
                 <RadioGroup
+                
                   onSelect={(index, value) => this.onSelect(index, value)}
                   style={RadioGroupstyle}
                   color='#68accb'
@@ -191,6 +193,7 @@ class Send extends Component {
 }
 const styles = StyleSheet.create({
   containerAll: {
+    backgroundColor: '#f9f9f9'
     // flex: 1,
   },
   bgcolor: {

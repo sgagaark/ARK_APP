@@ -1,22 +1,28 @@
-import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Text, View } from 'react-native';
+import React from 'react';
+import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './reducers'
 
-import { MainRouter } from './Router';
-import { TabRouter } from './Router';
-// import { DrawerRouter } from './Router';
-import HistorySendMoreScreen from './components/history/historysend/sendmore/HistorySendMoreScreen';
-import HistoryReceiveMore from './components/history/historyreceive/receivemore/HistoryReceiveMore';
+import AppReducers from './components/reducers';
 
 
-const App = () => (
-      <Provider store={createStore(reducers)}>
-            <MainRouter />
-      </Provider>
-)
+import AppWithNavigationState from './components/navigators/AppNavigators'
 
-export default App;
+import { HistoryScreenStackRouter } from './components/Router';
+import { MainRouter } from './components/Router';
+//import { TabRouter } from './Router';
 
-AppRegistry.registerComponent('ARK_APP', () => App);
+
+class ArkApp extends React.Component {
+      render() {
+            return (
+                  <Provider store={createStore(AppReducers)} >
+                        <HistoryScreenStackRouter />
+                  </Provider >
+            );
+      }
+}
+
+
+AppRegistry.registerComponent('ARK_APP', () => ArkApp);
+export default ArkApp;

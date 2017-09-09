@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, Image, ListView, Alert, TouchableHighlight } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+import { View, ListView, } from 'react-native';
+// import { Tile, List, ListItem } from 'react-native-elements';
 import axios from 'axios';
-import ReceiveBoatList from './ReceiveBoatList';
+import ReceiveBoatComponent from './ReceiveBoatComponent';
 
 
 // Make a component
 class HistoryReceiveCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      history: [],
-      isLoading: true,
-    };
-  }
-
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     history: [],
+  //     isLoading: true,
+  //   };
+  // }
 
   render() {
-    if (this.state.isLoading) {
+    if (!this.props.ReplyBoat.isCompelete) {
       return (
         <View>
         </View>
@@ -31,10 +32,12 @@ class HistoryReceiveCard extends Component {
     );
   }
   renderBoats() {
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    this.dataSource = ds.cloneWithRows(this.props.ReplyBoat.Boats)
     return (
       <ListView
-        dataSource={this.state.dataSource}
-        renderRow={(rowData) => <ReceiveBoatList {...rowData} {...this.props} />
+        dataSource={this.dataSource}
+        renderRow={(rowData) => <ReceiveBoatComponent {...rowData} {...this.props.ReplyBoat.Boats} />
         }
       />
     )
@@ -45,6 +48,7 @@ class HistoryReceiveCard extends Component {
   }
 
   getReplyBoat() {
+    const { dispatch } = this.props;
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -60,14 +64,13 @@ class HistoryReceiveCard extends Component {
       .then((response) => {
 
         if (response.data['status']) {
-          Alert.alert("收到資料");
-          const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-          this.setState({
-            isLoading: false,
-            dataSource: ds.cloneWithRows(response.data['data'])
-          });
+
+          // this.props.setMyReplyBoat(response.data['data']);
+          // const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+          // dataSource = ds.cloneWithRows(response.data['data'])
+          this.props.setReplyBoat(response.data['data']);
         } else {
-          Alert.alert('錯誤', '與伺服器連線異常');
+          //Alert.alert('錯誤', '與伺服器連線異常');
         }
       }).catch((err) => {
         console.log(err);
@@ -75,8 +78,19 @@ class HistoryReceiveCard extends Component {
 
 
   }
-
-
-
 }
-export default HistoryReceiveCard;
+
+const mapStateToProps = state => {
+  return {
+    ReplyBoat: state.ReplyBoat
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setReplyBoat: (data) => {
+      dispatch(setReplyBoat(data))
+    }
+  }
+}
+
+export default connect(mapStateToProps, actions)(HistoryReceiveCard);

@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+// import { connect } from 'react-redux';
+// import { Tile, List, ListItem } from 'react-native-elements';
 import SegmentedControl from 'react-native-segmented-control';
 
 import HistoryRecive from './historyreceive/HistoryRecive';
 import HistorySend from './historysend/HistorySend';
 
-import { StackNavigator } from 'react-navigation';
+// import { StackNavigator } from 'react-navigation';
 
-import HistoryReceiveMore from './historyreceive/receivemore/HistoryReceiveMore';
-import HistorySendMoreScreen from './historysend/sendmore/HistorySendMoreScreen';
+// import HistoryReceiveMore from './historyreceive/receivemore/HistoryReceiveMore';
+// import HistorySendMoreScreen from './historysend/sendmore/HistorySendMoreScreen';
 // Make a component
 // 是用SegmentedControlIOS切換Historysend與Historyreceive的頁面
 class HistoryScreen extends Component {
-  constructor(props) {
-    super(props);
-    state = { history: [] };
-  }
-
-
   render() {
     const { bgcolor, header, headertext, ScrollViewstyle, semgstyle } = styles;
     return (
@@ -99,4 +94,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 })
-export default HistoryScreen;
+
+export default (HistoryScreen);

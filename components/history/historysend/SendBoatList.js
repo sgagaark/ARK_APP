@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderBottomWidth: 1,
         borderColor: "#dfdfdf",
+        backgroundColor:'#f9f9f9'
     },
     titletext: {
         fontSize: 18,

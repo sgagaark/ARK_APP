@@ -1,99 +1,103 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import { Server } from '../Server';
 import { ScrollView, StyleSheet, Text, View, Image, Button, Linking } from 'react-native';
 import { FormLabel, FormValidationMessage, FormInput, } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import axios from 'axios';
+import { NavigationActions } from 'react-navigation';
 // Make a component
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      passwd: ''
-    };
-  }
+  state = {
+    email: '',
+    passwd: ''
+  };
   render() {
-  const { navigate } = props.navigation;
-  const { containerALL,container, textitle, butlogin, butforgot, butforgotin, loginsty, titlemargin } = styles;
-  return (
-    <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}style={containerALL}>
-      <View style={container}>
-        <View style={titlemargin}>
-          <Text style={textitle}>登入會員</Text>
-        </View>
-        <View style={loginsty}>
-          {/*輸入帳號*/}
-          <FormInput
-            autoCapitalize='none'
-            spellCheck={false}
-            //clearTextOnFocus={true}
-            placeholder='請輸入帳號'
-            keyboardType='email-address'
-            onChangeText={(email) => {
-              this.setState({ email });
-            }}
-          />
-        </View>
-        <View style={loginsty}>
-          {/*輸入密碼   */}
-          <FormInput
-            autoCapitalize='none'
-            secureTextEntry={true}
-            spellCheck={false}
-            clearTextOnFocus={true}
-            placeholder='請輸入密碼'
-            keyboardType='default'
-            onChangeText={(passwd) => {
-              this.setState({ passwd });
-            }} />
-        </View>
+    const { navigate } = this.props.navigation;
+    const { containerALL, container, textitle, butlogin, butforgot, butforgotin, loginsty, titlemargin } = styles;
+    return (
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }} style={containerALL}>
+        <View style={container}>
+          <View style={titlemargin}>
+            <Text style={textitle}>登入會員</Text>
+          </View>
+          <View style={loginsty}>
+            {/*輸入帳號*/}
+            <FormInput
+              autoCapitalize='none'
+              spellCheck={false}
+              //clearTextOnFocus={true}
+              placeholder='請輸入帳號'
+              keyboardType='email-address'
+              onChangeText={(email) => {
+                this.setState({ email });
+              }}
+            />
+          </View>
+          <View style={loginsty}>
+            {/*輸入密碼   */}
+            <FormInput
+              autoCapitalize='none'
+              secureTextEntry={true}
+              spellCheck={false}
+              clearTextOnFocus={true}
+              placeholder='請輸入密碼'
+              keyboardType='default'
+              onChangeText={(passwd) => {
+                this.setState({ passwd });
+              }} />
+          </View>
 
-        <View style={butlogin}>
-          <Button
-            //登入會員的按鈕
-            onPress={() => this.UserLogin(this.state)}
-            title="登入"
-            color="#ffffff"
-            style={{ fontSize: 18 }}
-          />
-        </View>
-        <View style={butforgot}>
-          <View style={butforgotin}>
+          <View style={butlogin}>
             <Button
-              onPress={() => navigate('Forgot')}
-              title="忘記密碼"
+              //登入會員的按鈕
+              onPress={() => this.UserLogin(this.state)}
+              title="登入"
               color="#ffffff"
               style={{ fontSize: 18 }}
             />
           </View>
-          <View style={butforgotin}>
-            <Button
-              onPress={() => navigate('Signup')}
-              title="註冊會員"
-              color="#ffffff"
-              style={{ fontSize: 18 }}
-            />
+          <View style={butforgot}>
+            <View style={butforgotin}>
+              <Button
+                onPress={() => navigate('Forgot')}
+                title="忘記密碼"
+                color="#ffffff"
+                style={{ fontSize: 18 }}
+              />
+            </View>
+            <View style={butforgotin}>
+              <Button
+                onPress={() => navigate('Signup')}
+                title="註冊會員"
+                color="#ffffff"
+                style={{ fontSize: 18 }}
+              />
+            </View>
           </View>
         </View>
-      </View>
 
-    </KeyboardAwareScrollView>
-  );
+      </KeyboardAwareScrollView>
+    );
   }
   UserLogin() {
+    // NavigationActions.navigate({ routeName: 'ContentScreen' })
+
     axios('/UserLogin', {
       method: 'post',
-      baseURL: 'http://www.rongserver.com/ark/api/',
+      baseURL: Server('uri') + '/ark/api',
       data: {
         email: this.state.email,
         passwd: this.state.passwd
-
       }
     })
       .then((response) => {
         if (response.data['status']) {
           console.log('isLogin');
+          this.props.setAccount(this.state.email, this.state.passwd);
           this.props.navigation.navigate('ContentScreen');
+          //this.props.navigation.navigate('ContentScreen');
         } else {
           console.log('LoginFail');
         }
@@ -105,7 +109,7 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerALL:{
+  containerALL: {
     backgroundColor: '#68accb',
     //alignItems: 'center',
     //justifyContent: 'center',
@@ -115,7 +119,7 @@ const styles = StyleSheet.create({
     //backgroundColor: '#68accb',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop:150,
+    paddingTop: 200,
     //flex: 1,
   },
   titlemargin: {
@@ -169,4 +173,12 @@ const styles = StyleSheet.create({
 
 })
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    libraries: state.libraries,
+    nav: state.App_nav,
+  }
+}
+
+
+export default connect(mapStateToProps, actions)(Login);

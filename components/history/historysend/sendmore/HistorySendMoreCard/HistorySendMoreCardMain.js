@@ -26,7 +26,7 @@ export class HistorySendMoreCardMain extends Component {
               </View>
               <View>
                 {/*時間*/}
-                <Text style={timetext}>>>  {moment(params.data.sendTime).format('YYYY/MM/DD     hh:mm')}</Text>
+                <Text style={timetext}>>>  {/*moment(params.data.sendTime).format('YYYY/MM/DD     hh:mm')*/}</Text>
               </View>
             </View>
           </View>
@@ -34,11 +34,11 @@ export class HistorySendMoreCardMain extends Component {
           <View style={down}>
             <View style={titlstyle}>
               {/*主題         */}
-              <Text style={titletext}>{params.data.boatTitle}</Text>
+              <Text style={titletext}>{/*params.data.boatTitle*/}</Text>
             </View>
             <View style={contstyle}>
               {/*內文*/}
-              <Text style={conttext}>{params.data.boatContent}
+              <Text style={conttext}>{/*params.data.boatContent*/}
               </Text>
             </View>
           </View>

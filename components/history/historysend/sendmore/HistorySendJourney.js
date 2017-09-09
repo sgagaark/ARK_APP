@@ -6,8 +6,10 @@ import HistorySendJourneyCardTitle from './HistorySendJourneyCard/HistorySendJou
 
 // Make a component
 class HistorySendJourney extends Component {
-  state = { hissendjourney: [] };
-
+  constructor(props) {
+    super(props);
+    this.state = { hissendjourney: [] };
+  }
 
   render() {
     const { headerstyle, conststyle, whiteline } = styles;
@@ -15,7 +17,7 @@ class HistorySendJourney extends Component {
       <View style={conststyle}>
         <View style={headerstyle}>
           {/*上方主圖區*/}
-          <HistorySendJourneyCardTitle />
+          <HistorySendJourneyCardTitle {...this.props} />
         </View>
         <View>
           {/*下方回復區*/}

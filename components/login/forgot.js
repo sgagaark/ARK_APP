@@ -6,7 +6,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 class Forgot extends Component {
   // state = { Forgot: [] };
   render(){
-    const {navigate} = props.navigation;
+    const {navigate} = this.props.navigation;
     const {containerALL,container,butlogin,butforgot,loginsty,textitle,
       titlemargin,textlist,butresend,texttitle2,titlemargin2} = styles;
     return (

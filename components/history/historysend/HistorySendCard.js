@@ -65,7 +65,7 @@ class HistorySendCard extends Component {
     })
       .then((response) => {
         if (response.data['status']) {
-          Alert.alert("收到資料");
+          //Alert.alert("收到資料");
           const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
           this.setState({
             isLoading: false,

@@ -3,8 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, Alert, Tex
 import { Tile, List, ListItem } from 'react-native-elements';
 import { NavigationActions } from 'react-navigation';
 import axios from 'axios';
-
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 // Make a component
 class ReceiveReplyCardInput extends Component {
   constructor(props) {
@@ -16,24 +15,29 @@ class ReceiveReplyCardInput extends Component {
   }
 
   render() {
-    const { container, textstyle } = styles;
+    const { container, textstyle,butstyle,buttextstyle } = styles;
     return (
+      <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
       <View style={container}>
-        <View style={textstyle}>
+        <ScrollView style={textstyle}>
           <TextInput
-            style={{ height: 295, borderColor: 'gray', borderWidth: 0 }}
+            ref={(r) => { this._textInputRef = r; }}
+            style={{ height: 250, borderWidth: 0,fontSize:14 }}
             onChangeText={(boatContent) => this.setState({ boatContent: boatContent })}
             placeholder="想跟他說的話  (內文)"
             multiline={true}
             value={this.state.text}
           />
-        </View>
-        <View>
-          <TouchableOpacity onPress={() => this.sendReply()}>
-            <Text>傳送</Text>
+                  <View >
+          <TouchableOpacity onPress={() => this.sendReply()}
+            style={butstyle}
+            >
+            <Text style={buttextstyle}>傳送</Text>
           </TouchableOpacity>
         </View>
+        </ScrollView>
       </View>
+      </KeyboardAwareScrollView>
     );
   }
 
@@ -90,8 +94,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textstyle: {
-    alignItems: 'center',
+    //alignItems: 'center',
     width: 290,
   },
+  butstyle:{
+    height:40,
+    backgroundColor:'#e4007f',
+    alignItems:'center',
+    justifyContent:'center'
+
+  },
+  buttextstyle:{
+    color:'#ffffff',
+    fontSize:18,
+  }
 })
 export default ReceiveReplyCardInput;

@@ -60,7 +60,7 @@ class HistorySendMore extends Component {
       method: 'post',
       baseURL: 'http://www.rongserver.com/ark/api/',
       data: {
-        boatId: this.props.navigation.state.params.data.boatId
+        //boatId: this.props.navigation.state.params.data.boatId
       }
     })
       .then((response) => {

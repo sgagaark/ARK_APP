@@ -77,11 +77,11 @@ const styles = StyleSheet.create({
 
   },
   titletext: {
-    fontSize: 17,
+    fontSize: 18,
     color: '#595959',
   },
   conttext: {
-    fontSize: 13.5,
+    fontSize: 14,
     color: '#595959',
     lineHeight: 20,
   },

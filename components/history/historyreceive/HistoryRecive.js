@@ -15,7 +15,7 @@ class HistoryRecive extends Component {
   render() {
     return (
       <View>
-        <HistoryReceiveCard {...this.props}/>
+        <HistoryReceiveCard/>
       </View>
     );
   }

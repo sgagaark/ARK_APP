@@ -24,7 +24,7 @@ class HisSendjourneyCardtitle extends Component {
               <Text style={titletext}>台灣 / 台北市</Text>
             </View>
             <View>
-              <Text style={titletext}>2017/06/02   14:00</Text>
+              <Text style={titletext}>2017/07/17   21:43</Text>
             </View>
           </View>
         </View>
