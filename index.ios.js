@@ -6,10 +6,9 @@ import { createStore } from 'redux';
 import AppReducers from './components/reducers';
 
 
-import AppWithNavigationState from './components/navigators/AppNavigators'
+//import AppWithNavigationState from './components/navigators/AppNavigators';
 
-import { HistoryScreenStackRouter } from './components/Router';
-import { MainRouter } from './components/Router';
+import { AppNavigator } from './components/Navigators/AppNavigator';
 //import { TabRouter } from './Router';
 
 
@@ -17,7 +16,7 @@ class ArkApp extends React.Component {
       render() {
             return (
                   <Provider store={createStore(AppReducers)} >
-                        <HistoryScreenStackRouter />
+                        <AppNavigator />
                   </Provider >
             );
       }
