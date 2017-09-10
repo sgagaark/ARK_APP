@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Button, Linking } from 'react-native';
 import { FormInput, } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
+import { NavigationActions } from 'react-navigation';
+import { connect } from 'react-redux';
 // Make a component
 class Login extends Component {
     render() {
@@ -53,7 +55,7 @@ class Login extends Component {
                     <View style={butforgot}>
                         <View style={butforgotin}>
                             <Button
-                                //onPress={() => navigate('Forgot')}
+                                onPress={() => navigate('Forgot')}
                                 title="忘記密碼"
                                 color="#ffffff"
                                 style={{ fontSize: 18 }}
@@ -61,7 +63,7 @@ class Login extends Component {
                         </View>
                         <View style={butforgotin}>
                             <Button
-                                //onPress={() => navigate('Signup')}
+                                onPress={() => navigate('Signup')}
                                 title="註冊會員"
                                 color="#ffffff"
                                 style={{ fontSize: 18 }}
@@ -141,6 +143,11 @@ const styles = StyleSheet.create({
 
 })
 
+const mapDispatchToProps = dispatch => ({
+    //login:()=>,
+    forgot: () => dispatch(NavigationActions.navigate({ routeName: 'Forgot' })),
+    signup: () => dispatch(NavigationActions.navigate({ routeName: 'Signup' }))
+})
 
 
-export default Login;
+export default connect(mapDispatchToProps)(Login);
