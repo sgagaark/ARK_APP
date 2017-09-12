@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 //import SvgUri from 'react-native-svg-uri';
 
 // Make a component
-class Receiveboat extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { receiveboat: [] };
-
-  }
+class BoatIcon extends Component {
 
   render() {
     const { botimg, textstyle } = styles;
@@ -19,7 +14,7 @@ class Receiveboat extends Component {
         <Text style={textstyle}>台中市</Text>
         <TouchableOpacity onPress={() => { this.showBoat() }}>
           <Image
-            source={require('../../assets/receive/bboatLine.png')}
+            source={require('../../../assets/receive/bboatLine.png')}
           />
         </TouchableOpacity>
       </View>
@@ -27,7 +22,7 @@ class Receiveboat extends Component {
   }
 
   showBoat() {
-    this.props.navigation.navigate('ReceiveReply', { data: this.props.data });
+    this.props.navigation.navigate('Reply', { data: this.props.data });
   }
 }
 
@@ -48,4 +43,4 @@ const styles = StyleSheet.create({
     textShadowRadius: 2
   },
 })
-export default Receiveboat;
+export default BoatIcon;
