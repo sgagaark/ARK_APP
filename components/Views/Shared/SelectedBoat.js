@@ -12,7 +12,7 @@ class SelectedBoat extends Component {
 
   render() {
     const { container, top, down, titletext, conttext, timetext, imgstyle, maptext, maptimestyle, mapstyle, titlstyle, contstyle } = styles;
-    const { params } = this.props.navigation.state;
+    //const { params } = this.props.navigation.state;
     return (
       <View style={container}>
         <View>

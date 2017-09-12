@@ -34,7 +34,7 @@ export default ContentNavigator = TabNavigator(
                 },
             },
         },
-        /*HistoryNavigator: {
+        HistoryNavigator: {
             screen: HistoryNavigator,
             navigationOptions: {
                 tabBar: {
@@ -47,7 +47,7 @@ export default ContentNavigator = TabNavigator(
                 },
             },
         },
-        CountNavigator: {
+        /*CountNavigator: {
             screen: CountNavigator,
             navigationOptions: {
                 tabBar: {
