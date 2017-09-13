@@ -19,18 +19,19 @@ class ReceiveReply extends Component {
     // }
 
     render() {
+        const { data } = this.props.navigation.state.params;
         const { bgcolor, } = styles;
         return (
             <ScrollView style={bgcolor}>
                 <View>
-                    <SelectedBoat {...this.props} />
+                    <SelectedBoat data={data} {...this.props.data} />
                 </View>
-                 {/* <View>
+                {/* <View>
                     <ReplyMessageCell {...this.props} />
                 </View> */}
-                 <View>
-                    <ReplyInput {...this.props} />
-                </View>  
+                <View>
+                    <ReplyInput data={data} {...this.props.data} />
+                </View>
             </ScrollView>
 
         );

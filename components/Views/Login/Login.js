@@ -1,12 +1,22 @@
 //登入首頁
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, Button, Linking } from 'react-native';
+import Server from '../../Server';
+import { ScrollView, StyleSheet, Text, View, Image, Button, Linking, Alert } from 'react-native';
 import { FormInput, } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import { NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
+import { setUserLogin, getAroundBoat } from '../../actions'
+import axios from 'axios';
+
+
 // Make a component
 class Login extends Component {
+    state = {
+        email: '',
+        passwd: ''
+    };
+
     render() {
         const { navigate } = this.props.navigation;
         const { containerALL, container, textitle, butlogin, butforgot, butforgotin, loginsty, titlemargin } = styles;
@@ -25,7 +35,7 @@ class Login extends Component {
                             placeholder='請輸入帳號'
                             keyboardType='email-address'
                             onChangeText={(email) => {
-                                //this.setState({ email });
+                                this.setState({ email });
                             }}
                         />
                     </View>
@@ -39,14 +49,17 @@ class Login extends Component {
                             placeholder='請輸入密碼'
                             keyboardType='default'
                             onChangeText={(passwd) => {
-                                //this.setState({ passwd });
+                                this.setState({ passwd });
                             }} />
                     </View>
 
                     <View style={butlogin}>
                         <Button
                             //登入會員的按鈕
-                            //onPress={() => this.UserLogin(this.state)}
+                            /* onPress={() => this.props.navigation.dispatch(NavigationActions.back({
+                                key: 0,
+                            }))} */
+                            onPress={() => this.UserLogin()}
                             title="登入"
                             color="#ffffff"
                             style={{ fontSize: 18 }}
@@ -76,7 +89,35 @@ class Login extends Component {
         );
     }
 
+
+    UserLogin() {
+        const { dispatch, navigation } = this.props;
+        axios('/UserLogin', {
+            method: 'post',
+            baseURL: Server('fulluri'),
+            data: {
+                email: this.state.email,
+                passwd: this.state.passwd
+            }
+        })
+            .then((response) => {
+                if (response.data['status']) {
+                    dispatch(setUserLogin(response.data['data'][0]['id']));
+                    navigation.dispatch(NavigationActions.back({
+                        key: 0,
+                    }))
+                } else {
+                    Alert.alert('登入', '帳號或密碼錯誤！');
+                }
+            }).catch((err) => {
+                Alert.alert('登入', '連線異常！');
+            })
+    }
+
+
 }
+
+
 
 const styles = StyleSheet.create({
     containerALL: {
@@ -143,11 +184,12 @@ const styles = StyleSheet.create({
 
 })
 
-const mapDispatchToProps = dispatch => ({
-    //login:()=>,
-    forgot: () => dispatch(NavigationActions.navigate({ routeName: 'Forgot' })),
-    signup: () => dispatch(NavigationActions.navigate({ routeName: 'Signup' }))
-})
+
+const mapStateToProps = state => {
+    return {
+        UserInfo: state.UserInfo,
+    }
+}
 
 
-export default connect(mapDispatchToProps)(Login);
+export default connect(mapStateToProps)(Login);

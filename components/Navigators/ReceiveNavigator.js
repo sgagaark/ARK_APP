@@ -1,6 +1,7 @@
 import { StackNavigator } from 'react-navigation';
 import Receive from '../Views/Receive/Receive';
 import Reply from '../Views/Receive/Reply';
+import Loading from '../Views/Shared/Loading';
 
 
 export default ReceiveNavigator = StackNavigator({

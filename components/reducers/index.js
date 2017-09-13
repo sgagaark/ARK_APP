@@ -1,9 +1,27 @@
 import { combineReducers } from 'redux';
 
-function good(state = [], action) {
+function UserLogin(state = [], action) {
+    switch (action.type) {
+        case 'setUserLogin':
+            return Object.assign({}, state, {
+                UserId: action.id,
+                isLogin: true,
+            });
+    }
+    return state;
+}
+
+function AroundBoats(state = [], action) {
+    switch (action.type) {
+        case 'setAroundBoats':
+            return Object.assign({}, state, {
+                data: action.data,
+            });
+    }
     return state;
 }
 
 export default combineReducers({
-    good,
+    UserInfo: UserLogin,
+    AroundBoats: AroundBoats,
 });
