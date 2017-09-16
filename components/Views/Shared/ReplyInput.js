@@ -3,51 +3,51 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, TouchableOpacity, Alert, TextInput, Geolocation } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
+import Server from '../../Server';
 import axios from 'axios';
 
 class ReplyInput extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     hisrecmorecardothers: [],
-  //     boatContent: '',
-  //   };
-  // }
+  state = {
+    boatContent: '',
+    isSending: false,
+  }
 
   render() {
-    const { container, textstyle,butstyle,buttextstyle } = styles;
+    const { container, textstyle, butstyle, buttextstyle } = styles;
     return (
       <KeyboardAwareScrollView getTextInputRefs={() => { return [this._textInputRef]; }}>
-      <View style={container}>
-        <ScrollView style={textstyle}>
-          <TextInput
-            ref={(r) => { this._textInputRef = r; }}
-            style={{ height: 250, borderWidth: 0,fontSize:14 }}
-            onChangeText={(boatContent) => this.setState({ boatContent: boatContent })}
-            placeholder="想跟他說的話  (內文)"
-            multiline={true}
+        <View style={container}>
+          <ScrollView style={textstyle}>
+            <TextInput
+              ref={(r) => { this._textInputRef = r; }}
+              style={{ height: 250, borderWidth: 0, fontSize: 14 }}
+              onChangeText={(boatContent) => this.setState({ boatContent: boatContent })}
+              placeholder="想跟他說的話  (內文)"
+              multiline={true}
             //value={this.state.text}
-          />
-                  <View >
-          <TouchableOpacity /*onPress={() => this.sendReply()}*/
-            style={butstyle}
-            >
-            <Text style={buttextstyle}>傳送</Text>
-          </TouchableOpacity>
+            />
+            <View >
+              <TouchableOpacity onPress={() => this.sendReply()}
+                style={butstyle}
+              >
+                <Text style={buttextstyle}>傳送</Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
         </View>
-        </ScrollView>
-      </View>
       </KeyboardAwareScrollView>
     );
   }
 
   sendReply() {
-    const resetAction = NavigationActions.reset({
-      index: 0,
-      actions: [
-        NavigationActions.navigate({ routeName: 'Receive' })
-      ]
-    })
+    const { boatId } = this.props
+    const { dispatch, navigation } = this.props;
+    if (this.state.isSending) {
+      return;
+    } else {
+      this.setState({ isSending: true });
+    }
+
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -59,10 +59,10 @@ class ReplyInput extends Component {
 
       axios('/SendReply', {
         method: 'post',
-        baseURL: 'http://www.rongserver.com/ark/api/',
+        baseURL: Server('fulluri'),
         data: {
           userId: 0,
-          boatId: this.props.navigation.state.params.data.boatId,
+          boatId: boatId,
           boatContent: this.state.boatContent,
           boatLatitude: this.state.userlatitude,
           boatLongitude: this.state.userlongitude
@@ -71,7 +71,9 @@ class ReplyInput extends Component {
         .then((response) => {
           if (response.data['status']) {
             Alert.alert('提示', '回信已送出');
-            this.props.navigation.dispatch(resetAction);
+            navigation.dispatch(NavigationActions.back({
+              key: 0,
+            }));
           } else {
             console.log('Fail');
           }
@@ -97,16 +99,16 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     width: 290,
   },
-  butstyle:{
-    height:40,
-    backgroundColor:'#e4007f',
-    alignItems:'center',
-    justifyContent:'center'
+  butstyle: {
+    height: 40,
+    backgroundColor: '#e4007f',
+    alignItems: 'center',
+    justifyContent: 'center'
 
   },
-  buttextstyle:{
-    color:'#ffffff',
-    fontSize:18,
+  buttextstyle: {
+    color: '#ffffff',
+    fontSize: 18,
   }
 })
 export default ReplyInput;

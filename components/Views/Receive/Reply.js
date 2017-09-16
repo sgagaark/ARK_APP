@@ -24,13 +24,13 @@ class ReceiveReply extends Component {
         return (
             <ScrollView style={bgcolor}>
                 <View>
-                    <SelectedBoat data={data} {...this.props.data} />
+                    <SelectedBoat data={data} />
                 </View>
                 {/* <View>
                     <ReplyMessageCell {...this.props} />
                 </View> */}
                 <View>
-                    <ReplyInput data={data} {...this.props.data} />
+                    <ReplyInput boatId={data.boatId} {...this.props} />
                 </View>
             </ScrollView>
 

@@ -14,7 +14,8 @@ import axios from 'axios';
 class Login extends Component {
     state = {
         email: '',
-        passwd: ''
+        passwd: '',
+        isLoging: false,
     };
 
     render() {
@@ -92,6 +93,9 @@ class Login extends Component {
 
     UserLogin() {
         const { dispatch, navigation } = this.props;
+        if (this.state.isLoging)
+            return;
+        this.state.isLoging = true;
         axios('/UserLogin', {
             method: 'post',
             baseURL: Server('fulluri'),
@@ -101,6 +105,7 @@ class Login extends Component {
             }
         })
             .then((response) => {
+                this.setState({ isLoging: false });
                 if (response.data['status']) {
                     dispatch(setUserLogin(response.data['data'][0]['id']));
                     navigation.dispatch(NavigationActions.back({
@@ -110,6 +115,7 @@ class Login extends Component {
                     Alert.alert('登入', '帳號或密碼錯誤！');
                 }
             }).catch((err) => {
+                this.setState({ isLoging: false });
                 Alert.alert('登入', '連線異常！');
             })
     }
