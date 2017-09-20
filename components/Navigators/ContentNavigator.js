@@ -47,19 +47,19 @@ export default ContentNavigator = TabNavigator(
                 },
             },
         },
-        /*CountNavigator: {
+        CountNavigator: {
             screen: CountNavigator,
             navigationOptions: {
                 tabBar: {
-                    label: 'Logout',
+                    label: 'BoatCount',
                     icon: ({ tintColor }) =>
                         <Image
-                            source={require('../../assets/tabicons/default/faSignOutGrBig.png')}
+                            source={require('../../assets/tabicons/default/btnStatisticsGr.png')}
                             style={[styles.icon, { tintColor: tintColor }]}
                         />
                 },
             },
-        }, */
+        }, 
     },
     {
         animationEnabled: 'true',
