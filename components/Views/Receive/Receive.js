@@ -12,14 +12,15 @@ import { setAroundBoats } from '../../actions'
 class Receive extends Component {
   state = {
     receive: [],
-    isLoading: true
+    isLoading: true,
+    hasData: false,
   };
 
 
 
   render() {
     const { bgimgall, bgimg, bgimgin, botimg1, botimg2, botimg3, botimg4, botimg5 } = styles;
-    if (this.state.isLoading) {
+    if (!this.state.hasData) {
       return (
         <Loading />
       )
@@ -47,21 +48,6 @@ class Receive extends Component {
         <View style={botimg5}>
           <BoatIcon {...this.props} />
         </View> */}
-        {/* <View style={botimg1}>
-          <BoatIcon data={this.state.data[0]}{...this.props} />
-        </View>
-        <View style={botimg2}>
-          <BoatIcon data={this.state.data[1]} {...this.props} />
-        </View>
-        <View style={botimg3}>
-          <BoatIcon data={this.state.data[2]} {...this.props} />
-        </View>
-        <View style={botimg4}>
-          <BoatIcon data={this.state.data[3]} {...this.props} />
-        </View>
-        <View style={botimg5}>
-          <BoatIcon data={this.state.data[4]} {...this.props} />
-        </View> */}
       </View>
     );
   }
@@ -81,49 +67,54 @@ class Receive extends Component {
     }
   }
 
-
   getAroundBoat() {
     setTimeout(() => {
-      if (!this.props.UserInfo.isLogin && this.state.isLoading) {
-        getAroundBoat();
+      //如果已經有資料
+      if (this.state.hasData)
+        return;
+      //如果沒登入或還在load資料
+      if (!this.props.UserInfo.isLogin && !this.state.isLoading) {
+        console.log('NotLogin');
+        this.getAroundBoat();
         return;
       }
-    }, 1000);
+      this.setState({ isLoading: false });
+      console.log('getAroundBoat');
+      const { dispatch } = this.props;
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+      navigator.geolocation.getCurrentPosition((pos) => {
+        this.state.userlatitude = pos.coords.latitude;
+        this.state.userlongitude = pos.coords.longitude;
 
-    const { dispatch } = this.props;
-    var options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    navigator.geolocation.getCurrentPosition((pos) => {
-      this.state.userlatitude = pos.coords.latitude;
-      this.state.userlongitude = pos.coords.longitude;
-
-      axios('/GetAroundBoat', {
-        method: 'post',
-        baseURL: Server('fulluri'),
-        data: {
-          boatLatitude: this.state.userlatitude,
-          boatLongitude: this.state.userlongitude,
-        }
-      })
-        .then((response) => {
-          if (response.data['status']) {
-            dispatch(setAroundBoats(response.data['data']));
-            this.setState({ isLoading: false })
-          } else {
-            console.log('Fail');
+        axios('/GetAroundBoat', {
+          method: 'post',
+          baseURL: Server('fulluri'),
+          data: {
+            boatLatitude: this.state.userlatitude,
+            boatLongitude: this.state.userlongitude,
           }
-        }).catch((err) => {
-          console.log(err);
         })
+          .then((response) => {
+            if (response.data['status']) {
+              dispatch(setAroundBoats(response.data['data']));
+              this.setState({ hasData: true });
+            } else {
+              console.log('Fail');
+            }
+          }).catch((err) => {
+            console.log(err);
+          })
 
-    }, (error) => {
-      console.log(error);
-    }, options)
+      }, (error) => {
+        console.log(error);
+      }, options)
 
 
+    }, 1000);
   }
 }
 
