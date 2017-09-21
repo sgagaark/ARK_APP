@@ -19,7 +19,7 @@ export class MessageCell extends Component {
                     <View style={bgcolor}>
                         <View style={redpointstyle}>
                             {/*有新的回覆才出現*/}
-                            <View style={redpoint}></View>
+                            {/*<View style={redpoint}></View>*/}
                         </View>
                         <View style={imgstyle}>
                             <Image source={require('../../../assets/send/bboat.png')} />
@@ -27,15 +27,15 @@ export class MessageCell extends Component {
                         <View>
                             <View >
                                 {/*標題OK*/}
-                                < Text style={titletext} > 標題</Text>
+                                < Text style={titletext} > {this.props.boatTitle}</Text>
                             </View >
                             <View style={contstyle}>
                                 {/*內文OK*/}
-                                <Text style={context}>內文內文內文內文內文</Text>
+                                <Text style={context}>{this.props.boatContent}</Text>
                             </View>
                             <View>
                                 {/*時間NO與地點OK*/}
-                                <Text style={timetext}>台灣 / 台北市     >>  2017/09/12</Text>
+                                <Text style={timetext}>台灣 / 台北市     >>  {moment(this.props.sendTime).format('YYYY/MM/DD')}</Text>
                             </View>
                         </View>
 
@@ -53,9 +53,9 @@ export class MessageCell extends Component {
 
     showBoatContent() {
         if (this.props.type == 'receive')
-            this.props.navigation.navigate('HistoryReceive', { data: this.props });
+            this.props.navigate('HistoryReceive', { data: this.props });
         else
-            this.props.navigation.navigate('HistorySend', { data: this.props });
+            this.props.navigate('HistorySend', { data: this.props });
     }
 
 }

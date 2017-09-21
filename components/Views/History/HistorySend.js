@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import SelectedBoat from '../Shared/SelectedBoat';
+import ReplyMessageCell from '../Shared/ReplyMessageCell';
 
 // 這頁是抓取HisSendcard的內容
 // Make a component
@@ -17,7 +18,10 @@ class HistorySend extends Component {
     render() {
         return (
             <View>
-                <SelectedBoat />
+                <SelectedBoat data={this.props.navigation.state.params.data} />
+                <View>
+                    <ReplyMessageCell data={this.props.navigation.state.params.data} />
+                </View>
             </View>
         );
     }

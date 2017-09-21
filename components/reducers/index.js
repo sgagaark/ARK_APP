@@ -21,7 +21,31 @@ function AroundBoats(state = [], action) {
     return state;
 }
 
+function UserReplyBoats(state = [], action) {
+    switch (action.type) {
+        case 'setReplyBoats':
+            console.log(action.data);
+            return Object.assign({}, state, {
+                data: action.data,
+            });
+    }
+    return state;
+}
+
+function UserSendBoats(state = [], action) {
+    switch (action.type) {
+        case 'setUserSendBoats':
+            console.log(action.data);
+            return Object.assign({}, state, {
+                data: action.data,
+            })
+    }
+    return state;
+}
+
 export default combineReducers({
     UserInfo: UserLogin,
-    AroundBoats: AroundBoats,
+    AroundBoats,
+    UserReplyBoats,
+    UserSendBoats,
 });

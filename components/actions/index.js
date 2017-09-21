@@ -13,12 +13,13 @@
 //     }
 // }
 
-// export const setReplyBoat = (Boats) => {
-//     return {
-//         type: 'setReplyBoat',
-//         data: Boats,
-//     }
-// }
+//使用者回覆過的船
+export const setReplyBoats = (data) => {
+    return {
+        type: 'setReplyBoats',
+        data,
+    }
+}
 
 // export const setSelectedReplyBoat = (Boat) => {
 //     return {
@@ -26,6 +27,13 @@
 //         data: Boat
 //     }
 // }
+
+export const setUserSendBoats = (data) => {
+    return {
+        type: 'setUserSendBoats',
+        data,
+    }
+}
 
 export const setUserLogin = (id) => {
     return {

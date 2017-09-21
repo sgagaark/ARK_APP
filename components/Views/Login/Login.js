@@ -6,7 +6,7 @@ import { FormInput, } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 import { NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
-import { setUserLogin, getAroundBoat } from '../../actions'
+import { setUserLogin } from '../../actions'
 import axios from 'axios';
 
 

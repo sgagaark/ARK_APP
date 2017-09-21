@@ -24,7 +24,7 @@ class SelectedBoat extends Component {
                             <View>
                                 {/*時間*/}
                                 {/* <Text style={timetext}>>>  2017/09/11</Text> */}
-                                <Text style={timetext}>>>  {moment(data.sendTime).format('YYYY/MM/DD     hh:mm')}</Text>
+                                <Text style={timetext}>>>  {moment(data.createTime).format('YYYY/MM/DD     hh:mm')}</Text>
                             </View>
                         </View>
                     </View>
