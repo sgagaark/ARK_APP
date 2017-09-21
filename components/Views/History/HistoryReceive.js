@@ -26,10 +26,12 @@ class HistoryReceive extends Component {
         }
         return (
             <View style={container}>
+                <ScrollView>
                 <SelectedBoat data={this.props.navigation.state.params.data} />
                 <View>
                     <ReplyMessageCell {...this.props.navigation.state.params.data} />
                 </View>
+                </ScrollView>
             </View>
         );
     }
