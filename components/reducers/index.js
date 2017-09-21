@@ -24,7 +24,6 @@ function AroundBoats(state = [], action) {
 function UserReplyBoats(state = [], action) {
     switch (action.type) {
         case 'setReplyBoats':
-            console.log(action.data);
             return Object.assign({}, state, {
                 data: action.data,
             });

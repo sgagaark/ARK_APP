@@ -10,6 +10,7 @@ import Server from '../../Server';
 // Make a component
 class Send extends Component {
     state = {
+        isSending: false,
         RadioGrouptext: '白色紙船：只是想說說話',
         BoatType: 0,
         BoatTitle: '',
@@ -152,6 +153,10 @@ class Send extends Component {
         );
     }
     SendBoat() {
+        if (this.state.isSending)
+            return;
+        this.setState({ isSending: true });
+
         var options = {
             enableHighAccuracy: true,
             timeout: 5000,
@@ -179,6 +184,7 @@ class Send extends Component {
                     } else {
                         console.log('Fail');
                     }
+                    this.setState({ isSending: false });
                 }).catch((err) => {
                     console.log(err);
                 })

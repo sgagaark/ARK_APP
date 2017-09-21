@@ -11,6 +11,7 @@ class ReplyMessageCell extends Component {
 
   render() {
     const { container, top, down, nunstyle, contstyle, timestyle, butistyle, nuntext, conttext, timetext } = styles;
+    
     return (
       <View>
         <View style={top}>
@@ -18,7 +19,7 @@ class ReplyMessageCell extends Component {
             <Text style={nuntext}>U</Text>
           </View>
           <View style={contstyle}>
-            <Text style={conttext}>{'aaa'}</Text>
+            <Text style={conttext}>{this.props.receiveBoatContent}</Text>
           </View>
         </View>
         {/*上方結束         */}
@@ -41,7 +42,9 @@ class ReplyMessageCell extends Component {
       </View>
     )
   }
-
+  componentDidMount() {
+    console.log(this.props);
+  }
   report() {
     Alert.alert("檢舉", "確定要檢舉嗎？", [{ text: '確定', onPress: () => Alert.alert('提示', '已檢舉成功') }, { text: '取消', style: 'cancel' }])
   }

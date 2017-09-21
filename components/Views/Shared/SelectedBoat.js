@@ -45,9 +45,6 @@ class SelectedBoat extends Component {
         );
     }
 
-    componentDidMount() {
-        console.log(this.props.data);
-    }
 }
 const styles = StyleSheet.create({
     container: {
