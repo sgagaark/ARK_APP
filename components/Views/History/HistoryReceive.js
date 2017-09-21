@@ -11,8 +11,10 @@ class HistoryReceive extends Component {
     state = { historyrecive: [] };
 
     render() {
+        const { container } = styles;
+
         return (
-            <View>
+            <View style={container}>
                 <SelectedBoat data={this.props.navigation.state.params.data} />
                 <View>
                     <ReplyMessageCell data={this.props.navigation.state.params.data} />
@@ -25,5 +27,11 @@ class HistoryReceive extends Component {
         console.log(this.props.navigation.state.params);
     }
 }
-
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        backgroundColor: '#fefefe',
+        flex: 1,
+    },
+})
 export default HistoryReceive;

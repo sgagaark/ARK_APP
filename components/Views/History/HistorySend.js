@@ -16,8 +16,9 @@ class HistorySend extends Component {
     }
 
     render() {
+        const { container } = styles
         return (
-            <View>
+            <View style={container}>
                 <SelectedBoat data={this.props.navigation.state.params.data} />
                 <View>
                     <ReplyMessageCell data={this.props.navigation.state.params.data} />
@@ -26,5 +27,11 @@ class HistorySend extends Component {
         );
     }
 }
-
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor:'#fefefe',
+    },
+})
 export default HistorySend;

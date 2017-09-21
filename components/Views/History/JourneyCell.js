@@ -4,8 +4,8 @@ import { Tile, List, ListItem } from 'react-native-elements';
 import moment from 'moment';
 
 // Make a component
-class HisSendjourneyCardconst extends Component {
-  state = { hissendjourneycardconst: [] };
+class JourneyCell extends Component {
+  state = { JourneyCell: [] };
 
 
   render() {
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
     backgroundColor:'#fefefe',
   },
 })
-export default HisSendjourneyCardconst;
+export default JourneyCell;

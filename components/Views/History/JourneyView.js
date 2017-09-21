@@ -6,10 +6,10 @@ import JourneyCell from './JourneyCell';
 import JourneyTitle from './JourneyTitle';
 
 // Make a component
-class HistorySendJourney extends Component {
+class JourneyView extends Component {
     constructor(props) {
         super(props);
-        this.state = { hissendjourney: [] };
+        this.state = { JourneyView: [] };
     }
 
     render() {
@@ -170,4 +170,4 @@ const styles = StyleSheet.create({
         marginTop: 5,
     }
 })
-export default HistorySendJourney;
+export default JourneyView;
