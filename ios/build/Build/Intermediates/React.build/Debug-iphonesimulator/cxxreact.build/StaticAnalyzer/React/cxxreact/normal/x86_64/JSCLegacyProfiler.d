@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/ReactCommon/cxxreact/JSCLegacyProfiler.cpp
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/ReactCommon/cxxreact/JSCLegacyProfiler.cpp

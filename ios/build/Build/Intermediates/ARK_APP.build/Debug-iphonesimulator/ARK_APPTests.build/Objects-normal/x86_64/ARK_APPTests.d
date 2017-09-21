@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/ARK_APPTests/ARK_APPTests.m \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/ARK_APPTests/ARK_APPTests.m \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIRemote.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIKeyboardKeys.h \
@@ -35,14 +35,14 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestErrors.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestDefines.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h

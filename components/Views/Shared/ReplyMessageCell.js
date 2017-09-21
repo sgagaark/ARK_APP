@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     // alignItems:'center',
   },
   down: {
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: 'row',
     alignItems: 'center',
 

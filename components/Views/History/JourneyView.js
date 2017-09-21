@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import JourneyCell from './JourneyCell';
-import JourneyTitle from './JourneyTitle';
+
 
 // Make a component
 class JourneyView extends Component {
@@ -52,6 +52,7 @@ class JourneyView extends Component {
                     {/* JourneyCell */}
                     <View style={headerstyleB}>
                         <JourneyCell />
+                        {/* <JourneyCell />
                         <JourneyCell />
                         <JourneyCell />
                         <JourneyCell />
@@ -65,8 +66,7 @@ class JourneyView extends Component {
                         <JourneyCell />
                         <JourneyCell />
                         <JourneyCell />
-                        <JourneyCell />
-                        <JourneyCell />
+                        <JourneyCell /> */}
                     </View>
                     {/* 最下面的槓槓 */}
                     <View style={headerstyleC}>

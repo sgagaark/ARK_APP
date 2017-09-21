@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/third-party/folly-2016.09.26.00/folly/Unicode.cpp \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Unicode.h
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/third-party/folly-2016.09.26.00/folly/Unicode.cpp \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Unicode.h

@@ -1,24 +1,24 @@
 dependencies: \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Modules/RCTExceptionsManager.m \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Modules/RCTExceptionsManager.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTConvert.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Modules/RCTRedBox.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/React/Base/RCTRootView.h
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Modules/RCTExceptionsManager.m \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Modules/RCTExceptionsManager.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/React/Base/RCTRootView.h

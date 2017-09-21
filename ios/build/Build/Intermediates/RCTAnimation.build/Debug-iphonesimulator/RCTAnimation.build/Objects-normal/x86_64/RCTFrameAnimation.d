@@ -1,20 +1,20 @@
 dependencies: \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTFrameAnimation.m \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTFrameAnimation.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/RCTAnimationUtils.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
-  /Users/Rong/Desktop/ReactNative/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTFrameAnimation.m \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTFrameAnimation.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/RCTAnimationUtils.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/shilichi/Desktop/ark/ARK_APP/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
