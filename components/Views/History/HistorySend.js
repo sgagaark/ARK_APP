@@ -1,20 +1,24 @@
 //歷史紀錄之送船
 //歷史紀錄之收船
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, ListView, Alert } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import SegmentedControl from 'react-native-segmented-control';
 import SelectedBoat from '../Shared/SelectedBoat';
 import ReplyMessageCell from '../Shared/ReplyMessageCell';
 import JourneyView from './JourneyView';
+import ReplyInput from '../Shared/ReplyInput';
+import axios from 'axios';
 // 這頁是抓取HisSendcard的內容
 // Make a component
 class HistorySend extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { historyrecive: [] };
+    state = {
+        data: [],
+        noReply: true,
+        isLoading: true,
+    };
 
-    }
+
 
     render() {
         const { container, SelectedBoatCenter,JourneyViewFlex1,ReplyMessageCellStyle } = styles
@@ -67,6 +71,47 @@ class HistorySend extends Component {
                 </SegmentedControl>
             </View>
         );
+    }
+
+
+
+    componentDidMount() {
+        this.getReplyBoatByBoatId();
+        console.log(this.state);
+    }
+
+    getReplyBoatByBoatId() {
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        axios('/GetReplyBoatByBoatId', {
+            method: 'post',
+            baseURL: Server('fulluri'),
+            data: {
+                boatId: this.props.navigation.state.params.data.boatId
+            }
+        })
+            .then((response) => {
+                if (response.data['status']) {
+                    this.setState({
+                        isLoading: false,
+                        noReply: false,
+                        data: response.data['data'],
+                    });
+                    if (!response.data['data'].length) {
+                        this.setState({
+                            noReply: true,
+                        });
+                    }
+                } else {
+                    Alert.alert('錯誤', '與伺服器連線異常');
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+
     }
 }
 const styles = StyleSheet.create({

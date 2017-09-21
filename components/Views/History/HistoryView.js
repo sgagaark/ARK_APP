@@ -18,9 +18,6 @@ class HistoryView extends Component {
         receiveIsCompelete: false
     }
     render() {
-        console.log('send' + this.state.sendIsCompelete)
-        console.log('receive' + this.state.receiveIsCompelete);
-        console.log(!this.state.sendIsCompelete && !this.state.receiveIsCompelete)
         if (!(this.state.sendIsCompelete && this.state.receiveIsCompelete)) {
             return (
                 <View />
@@ -66,7 +63,7 @@ class HistoryView extends Component {
                         >
                             <ScrollView style={ScrollViewstyle}>
                                 {/*送出的船抓的頁面  要加listView*/}
-                                <MessageCell type={'send'} {...this.props.navigation} />
+                                {this.renderSendBoats()}
                             </ScrollView>
                         </SegmentedControl.Item>
                     </SegmentedControl>
@@ -77,10 +74,10 @@ class HistoryView extends Component {
 
     renderReceiveBoats() {
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-        this.dataSource = ds.cloneWithRows(this.props.UserReplyBoats.data);
+        this.receiveDataSource = ds.cloneWithRows(this.props.UserReplyBoats.data);
         return (
             <ListView
-                dataSource={this.dataSource}
+                dataSource={this.receiveDataSource}
                 renderRow={(rowData) => <MessageCell type={'receive'} {...rowData} {...this.props.navigation} />
                 }
             />
@@ -88,10 +85,10 @@ class HistoryView extends Component {
     }
     renderSendBoats() {
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-        this.dataSource = ds.cloneWithRows(this.props.UserSendBoats.data);
+        this.sendDataSource = ds.cloneWithRows(this.props.UserSendBoats.data);
         return (
             <ListView
-                dataSource={this.dataSource}
+                dataSource={this.sendDataSource}
                 renderRow={(rowData) => <MessageCell type={'send'} {...rowData} {...this.props.navigation} />
                 }
             />
